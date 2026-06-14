@@ -1,0 +1,73 @@
+import type { Article, MediumTabs } from "./medium-app.types"
+import { portfolioData } from "@/data/portfolio"
+
+export const tabs: MediumTabs = ["Following", "Recommended", "React", "System Design", "JavaScript"]
+
+export const articles: Article[] = [
+  {
+    author: portfolioData.personal.name,
+    in: "DemandHelm Blog",
+    title: "Enhancing React Projects with AWS Cognito",
+    desc: "A practical walkthrough of integrating AWS Cognito into a React project and the functions that make authentication actually work.",
+    date: "Oct 11, 2023",
+    readTime: "2 min read",
+    tags: ["React", "AWS Cognito"],
+    image: "linear-gradient(135deg, #FF9900 0%, #232F3E 100%)",
+    url: "https://blogs.demandhelm.com/enhancing-react-projects-with-aws-cognito-interation/"
+  },
+  {
+    author: portfolioData.personal.name,
+    in: "DemandHelm Blog",
+    title: "AWS Cognito User Pool Creation: Step-by-Step Guide",
+    desc: "A step-by-step guide to creating and configuring a User Pool in AWS Cognito for secure user management.",
+    date: "Oct 6, 2023",
+    readTime: "4 min read",
+    tags: ["AWS Cognito", "Security"],
+    image: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+    url: "https://blogs.demandhelm.com/aws-cognito-user-pool-creation/"
+  },
+  {
+    author: portfolioData.personal.name,
+    in: "DemandHelm Blog",
+    title: "AWS Cognito — Advantages, Pricing and Insights",
+    desc: "An overview of Amazon Cognito, the serverless authentication service — its pricing, advantages, and why it removes the need to manage auth servers.",
+    date: "Sep 22, 2023",
+    readTime: "4 min read",
+    tags: ["AWS", "Authentication"],
+    image: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+    url: "https://blogs.demandhelm.com/aws-cognito-advantages-pricing-insights/"
+  },
+  {
+    author: portfolioData.personal.name,
+    in: "DemandHelm Blog",
+    title: "Microsoft Clarity: A Game Changer for UX Research",
+    desc: "How Microsoft Clarity — a free, data-driven analytics tool — transforms UX research and customer experience.",
+    date: "May 15, 2023",
+    readTime: "7 min read",
+    tags: ["Analytics", "UX"],
+    image: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
+    url: "https://blogs.demandhelm.com/microsoft-clarity/"
+  },
+  {
+    author: portfolioData.personal.name,
+    in: "Medium",
+    title: "Indian \"Lok Sabha\" Candidate Analysis",
+    desc: "Not just who won or lost — a data-driven look at the personal details of the candidates who contested the 2019 Lok Sabha elections.",
+    date: "Oct 11, 2020",
+    readTime: "10 min read",
+    tags: ["Data Science", "Python"],
+    image: "linear-gradient(135deg, #FF9933 0%, #138808 100%)",
+    url: "https://medium.com/@nihir_shah/lok-sabha-2019-candidate-analysis-e56f1f37ac76"
+  },
+  {
+    author: portfolioData.personal.name,
+    in: "Medium",
+    title: "Managing Azure Instances With Telegram Bot Using Python — Part 2",
+    desc: "Just send a command to your Telegram bot to control your Azure instances remotely, all powered by Python.",
+    date: "Aug 24, 2020",
+    readTime: "8 min read",
+    tags: ["Azure", "Python"],
+    image: "linear-gradient(135deg, #0078D4 0%, #005a9e 100%)",
+    url: "https://medium.com/@nihir_shah/managing-azure-instances-with-telegram-bot-using-python-part-2-f9a19923132d"
+  }
+]
