@@ -34,7 +34,7 @@ export default function BrowserApp() {
       {/* Top chrome */}
       {isAndroid ? (
         /* Chrome (Android): address bar on top with menu */
-        <div className="flex-shrink-0" style={{ background: chromeBg }}>
+        <div className="shrink-0" style={{ background: chromeBg }}>
           <div className="flex items-center gap-2 px-3 py-2.5">
             <button onClick={closeApp} aria-label="Back" style={{ color: text }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -83,7 +83,7 @@ export default function BrowserApp() {
               aria-label={`Open ${bm.label} in a new tab`}
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-semibold text-[16px] shadow-sm transition-transform group-active:scale-90"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-semibold text-[16px] shadow-xs transition-transform group-active:scale-90"
                 style={{ background: bm.color }}
               >
                 {bm.initial}
@@ -103,7 +103,7 @@ export default function BrowserApp() {
       {/* Bottom chrome */}
       {isAndroid ? null : (
         /* Safari (iPhone): address bar + toolbar at the bottom */
-        <div className="flex-shrink-0 border-t" style={{ borderColor: border, background: chromeBg }}>
+        <div className="shrink-0 border-t" style={{ borderColor: border, background: chromeBg }}>
           <div className="px-4 py-2">
             <div
               className="flex items-center justify-center gap-2 rounded-xl px-3 py-2"

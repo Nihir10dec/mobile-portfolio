@@ -124,7 +124,7 @@ export default function Home() {
                   role="dialog"
                   aria-modal="true"
                   aria-label={`${appIdToShow ?? "app"} app`}
-                  className={`absolute inset-0 z-30 outline-none ${isEntering ? "app-enter" : isExiting ? "app-exit" : ""
+                  className={`absolute inset-0 z-30 outline-hidden ${isEntering ? "app-enter" : isExiting ? "app-exit" : ""
                     }`}
                   style={{
                     background: isDark ? "#000" : "#fff",

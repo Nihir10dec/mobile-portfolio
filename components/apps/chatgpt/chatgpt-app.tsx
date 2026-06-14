@@ -84,7 +84,7 @@ export default function ChatGptApp() {
     <div className="w-full h-full flex flex-col" style={{ background: bg }}>
       {/* Header */}
       <div
-        className="flex items-center justify-between px-4 py-3 border-b flex-shrink-0"
+        className="flex items-center justify-between px-4 py-3 border-b shrink-0"
         style={{ borderColor: border, background: headerBg }}
       >
         <button onClick={closeApp} aria-label="Close" style={{ color: accent }}>
@@ -111,7 +111,7 @@ export default function ChatGptApp() {
           <div key={m.id} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
             {m.role === "assistant" && (
               <div
-                className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mr-2 mt-0.5"
+                className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 mr-2 mt-0.5"
                 style={{ background: accent }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -134,7 +134,7 @@ export default function ChatGptApp() {
         {isTyping && (
           <div className="flex justify-start">
             <div
-              className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mr-2"
+              className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 mr-2"
               style={{ background: accent }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -152,12 +152,12 @@ export default function ChatGptApp() {
 
       {/* Suggested prompts — persist as follow-up questions after each reply */}
       {followUps.length > 0 && !isTyping && (
-        <div className="px-3 pb-2 flex gap-2 overflow-x-auto flex-shrink-0">
+        <div className="px-3 pb-2 flex gap-2 overflow-x-auto shrink-0">
           {followUps.map((p) => (
             <button
               key={p}
               onClick={() => send(p)}
-              className="whitespace-nowrap text-[13px] px-3 py-1.5 rounded-full border flex-shrink-0"
+              className="whitespace-nowrap text-[13px] px-3 py-1.5 rounded-full border shrink-0"
               style={{ borderColor: border, color: text }}
             >
               {p}
@@ -167,7 +167,7 @@ export default function ChatGptApp() {
       )}
 
       {/* Composer */}
-      <div className="px-3 py-3 border-t flex-shrink-0" style={{ borderColor: border, background: headerBg }}>
+      <div className="px-3 py-3 border-t shrink-0" style={{ borderColor: border, background: headerBg }}>
         <div className="flex items-end gap-2">
           <div
             className="flex-1 flex items-center rounded-3xl px-4 py-2"
@@ -183,7 +183,7 @@ export default function ChatGptApp() {
                 }
               }}
               placeholder="Message ChatGPT…"
-              className="flex-1 bg-transparent border-none outline-none text-[14px]"
+              className="flex-1 bg-transparent border-none outline-hidden text-[14px]"
               style={{ color: text }}
               aria-label="Message ChatGPT"
             />
@@ -192,7 +192,7 @@ export default function ChatGptApp() {
             onClick={() => send(input)}
             disabled={!input.trim() || isTyping}
             aria-label="Send"
-            className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 transition-opacity"
+            className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-opacity"
             style={{ background: accent, opacity: input.trim() && !isTyping ? 1 : 0.4 }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white">

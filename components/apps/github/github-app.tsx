@@ -57,7 +57,7 @@ export default function GitHubApp() {
       {/* Profile section */}
       <div className="px-4 py-4" style={{ borderBottom: `1px solid ${border}` }}>
         <div className="flex items-start gap-4">
-          <div className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-3xl flex-shrink-0 bg-cover bg-center"
+          <div className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-3xl shrink-0 bg-cover bg-center"
             style={{
               background: cardBg,
               border: `1px solid ${border}`,

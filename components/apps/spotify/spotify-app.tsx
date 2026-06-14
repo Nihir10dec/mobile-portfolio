@@ -66,7 +66,7 @@ export default function SpotifyApp() {
         <div className="grid grid-cols-2 gap-2 px-4 mb-6">
           {playlists.map((pl, i) => (
             <div key={i} className="flex items-center rounded-sm overflow-hidden h-14" style={{ background: panelBg }}>
-              <div className="w-14 h-14 flex-shrink-0" style={{ background: pl.color }} />
+              <div className="w-14 h-14 shrink-0" style={{ background: pl.color }} />
               <span className="text-[12px] font-bold px-3 leading-tight truncate" style={{ color: text }}>{pl.title}</span>
             </div>
           ))}
@@ -96,7 +96,7 @@ export default function SpotifyApp() {
           {recentTracks.map((trk, i) => (
             <button key={i} className="w-full flex items-center justify-between text-left group">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 flex-shrink-0" style={{ background: isDark ? "#282828" : "#e0e0e0" }}>
+                <div className="w-12 h-12 shrink-0" style={{ background: isDark ? "#282828" : "#e0e0e0" }}>
                   <div className="w-full h-full opacity-50 flex items-center justify-center">🎵</div>
                 </div>
                 <div>
@@ -116,7 +116,7 @@ export default function SpotifyApp() {
           <h2 className="text-[20px] font-bold mb-4" style={{ color: text }}>Made For You</h2>
           <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
             {playlists.slice().reverse().map((pl, i) => (
-              <div key={i} className="flex-shrink-0 w-[140px]">
+              <div key={i} className="shrink-0 w-[140px]">
                 <div className="w-[140px] h-[140px] rounded-md mb-3 shadow-md" style={{ background: pl.color }} />
                 <h3 className="text-[13px] font-bold truncate mb-1" style={{ color: text }}>{pl.title}</h3>
                 <p className="text-[12px] truncate" style={{ color: textMuted }}>{pl.artist}</p>
@@ -129,7 +129,7 @@ export default function SpotifyApp() {
       {/* Player Bar (Bottom) */}
       <div className="absolute bottom-[54px] left-2 right-2 rounded-md px-3 py-2 flex items-center justify-between z-20 shadow-lg" style={{ background: panelBg }}>
         <div className="flex items-center gap-3 w-3/4">
-          <div className="w-10 h-10 rounded shadow flex-shrink-0" style={{ background: "linear-gradient(135deg, #1f4037 0%, #99f2c8 100%)" }} />
+          <div className="w-10 h-10 rounded shadow-sm shrink-0" style={{ background: "linear-gradient(135deg, #1f4037 0%, #99f2c8 100%)" }} />
           <div className="min-w-0">
             <h3 className="text-[13px] font-bold truncate" style={{ color: text }}>Building the Engine</h3>
             <p className="text-[11px] truncate" style={{ color: textMuted }}>{portfolioData.personal.name}</p>

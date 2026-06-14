@@ -86,7 +86,7 @@ export default function BatterySurprise() {
   if (phase === "low") {
     return (
       <div
-        className="absolute inset-0 z-[60] flex items-center justify-center px-6"
+        className="absolute inset-0 z-60 flex items-center justify-center px-6"
         style={{ animation: "battery-fade-in 0.3s ease both" }}
         role="dialog"
         aria-modal="true"
@@ -117,7 +117,7 @@ export default function BatterySurprise() {
                   style={{ width: "7px", background: "#ff3b30" }}
                 />
                 <div
-                  className="absolute top-1/2 -right-[3px] -translate-y-1/2 rounded-r-[1px]"
+                  className="absolute top-1/2 right-[-3px] -translate-y-1/2 rounded-r-[1px]"
                   style={{ width: "3px", height: "9px", background: isDark ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.4)" }}
                 />
               </div>
@@ -152,7 +152,7 @@ export default function BatterySurprise() {
                 style={{ background: isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)" }}
               >
                 <span
-                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
                   style={{
                     background: "#34c759",
                     color: "#fff",
@@ -205,7 +205,7 @@ export default function BatterySurprise() {
   // ── The crash gag: glitch → black → boot ──────────────────────────────────
   if (phase === "crash-glitch") {
     return (
-      <div className="absolute inset-0 z-[60] overflow-hidden bg-black">
+      <div className="absolute inset-0 z-60 overflow-hidden bg-black">
         <div className="battery-glitch absolute inset-0">
           <div className="battery-glitch-layer battery-glitch-r" />
           <div className="battery-glitch-layer battery-glitch-g" />
@@ -222,13 +222,13 @@ export default function BatterySurprise() {
   }
 
   if (phase === "crash-off") {
-    return <div className="absolute inset-0 z-[60] bg-black" />
+    return <div className="absolute inset-0 z-60 bg-black" />
   }
 
   if (phase === "crash-boot") {
     return (
       <div
-        className="absolute inset-0 z-[60] flex flex-col items-center justify-center bg-black"
+        className="absolute inset-0 z-60 flex flex-col items-center justify-center bg-black"
         style={{ animation: "battery-fade-in 0.5s ease both" }}
       >
         {isIphone ? (

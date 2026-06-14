@@ -85,7 +85,7 @@ export default function PhoneApp() {
 
   const Avatar = ({ contact, size = 40 }: { contact: Contact; size?: number }) => (
     <div
-      className="rounded-full flex items-center justify-center flex-shrink-0 text-white font-semibold"
+      className="rounded-full flex items-center justify-center shrink-0 text-white font-semibold"
       style={{ width: size, height: size, background: contact.gradient, fontSize: size * 0.42 }}
     >
       {contact.initial}
@@ -95,7 +95,7 @@ export default function PhoneApp() {
   return (
     <div className="w-full h-full flex flex-col overflow-hidden" style={{ background: bg }}>
       {/* Header */}
-      <div className="w-full flex items-center justify-between px-4 pt-3 pb-1 flex-shrink-0">
+      <div className="w-full flex items-center justify-between px-4 pt-3 pb-1 shrink-0">
         <button onClick={closeApp} className="flex items-center gap-1 p-1 active:opacity-50 transition-opacity">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <path d="M15 19l-7-7 7-7" stroke="#007AFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -227,7 +227,7 @@ export default function PhoneApp() {
 
       {/* Bottom tab bar (part of layout, never overlaps content) */}
       <div
-        className="w-full flex items-stretch justify-around flex-shrink-0 border-t pt-1.5 pb-2"
+        className="w-full flex items-stretch justify-around shrink-0 border-t pt-1.5 pb-2"
         style={{ background: panelBg, borderColor: border }}
       >
         {tabs.map((t) => {

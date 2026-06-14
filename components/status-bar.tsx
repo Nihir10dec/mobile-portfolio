@@ -77,7 +77,7 @@ export default function StatusBar() {
                 </svg>
               )}
               <div
-                className="absolute top-1/2 -translate-y-1/2 -right-[3px] rounded-r-[1px]"
+                className="absolute top-1/2 -translate-y-1/2 right-[-3px] rounded-r-[1px]"
                 style={{
                   width: "2px",
                   height: "5px",
@@ -139,7 +139,7 @@ export default function StatusBar() {
             </svg>
           )}
           <div
-            className="absolute top-1/2 -translate-y-1/2 -right-[2px] rounded-r-[1px]"
+            className="absolute top-1/2 -translate-y-1/2 right-[-2px] rounded-r-[1px]"
             style={{ width: "2px", height: "4px", background: isDark ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)" }}
           />
         </div>

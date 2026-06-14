@@ -167,7 +167,7 @@ export default function MessagesApp() {
     <div className="w-full h-full flex flex-col" style={{ background: bg }}>
       {/* Header */}
       <div
-        className="flex items-center px-3 py-2.5 border-b flex-shrink-0"
+        className="flex items-center px-3 py-2.5 border-b shrink-0"
         style={{ borderColor: border, background: headerBg }}
       >
         <button onClick={closeApp} aria-label="Back" className="mr-1" style={{ color: meBubble }}>
@@ -255,7 +255,7 @@ export default function MessagesApp() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   aria-label="Your email"
-                  className="w-full text-[14px] px-3 py-2 rounded-lg bg-transparent border outline-none"
+                  className="w-full text-[14px] px-3 py-2 rounded-lg bg-transparent border outline-hidden"
                   style={{ borderColor: email && !emailOk ? "#ff3b30" : border, color: text }}
                 />
                 <input
@@ -265,7 +265,7 @@ export default function MessagesApp() {
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="phone number"
                   aria-label="Your phone number"
-                  className="w-full text-[14px] px-3 py-2 rounded-lg bg-transparent border outline-none"
+                  className="w-full text-[14px] px-3 py-2 rounded-lg bg-transparent border outline-hidden"
                   style={{ borderColor: phone && !phoneOk ? "#ff3b30" : border, color: text }}
                 />
               </div>
@@ -280,7 +280,7 @@ export default function MessagesApp() {
                 <button
                   onClick={submit}
                   disabled={!canSend || phase === "sending"}
-                  className="text-[14px] font-semibold px-5 py-2 rounded-full text-white flex-shrink-0 transition-opacity"
+                  className="text-[14px] font-semibold px-5 py-2 rounded-full text-white shrink-0 transition-opacity"
                   style={{ background: meBubble, opacity: canSend && phase !== "sending" ? 1 : 0.4 }}
                 >
                   {phase === "sending" ? "Sending…" : "Send"}
@@ -293,12 +293,12 @@ export default function MessagesApp() {
 
       {/* Starter chips (browsing or after a successful send) */}
       {(phase === "browsing" || phase === "sent") && (
-        <div className="px-3 pb-2 pt-1 flex gap-2 overflow-x-auto flex-shrink-0">
+        <div className="px-3 pb-2 pt-1 flex gap-2 overflow-x-auto shrink-0">
           {draftTemplates.map((t) => (
             <button
               key={t.id}
               onClick={() => pickTemplate(t)}
-              className="whitespace-nowrap text-[13px] px-3.5 py-2 rounded-full border flex-shrink-0"
+              className="whitespace-nowrap text-[13px] px-3.5 py-2 rounded-full border shrink-0"
               style={{ borderColor: border, color: text }}
             >
               {t.chip}
@@ -320,7 +320,7 @@ export default function MessagesApp() {
       />
 
       {/* Footer note */}
-      <div className="px-3 py-2 border-t flex-shrink-0" style={{ borderColor: border, background: headerBg }}>
+      <div className="px-3 py-2 border-t shrink-0" style={{ borderColor: border, background: headerBg }}>
         <p className="text-[10px] text-center" style={{ color: textMuted }}>
           {phase === "drafting"
             ? "Fill in the blanks — nothing sends until the draft is complete."
@@ -359,7 +359,7 @@ function FillInput({
         color: value ? text : muted,
         borderBottom: `1.5px ${value ? "solid" : "dashed"} ${value ? accent : muted}`,
       }}
-      className="inline bg-transparent outline-none text-[14px] px-0.5 mx-0.5 align-baseline"
+      className="inline bg-transparent outline-hidden text-[14px] px-0.5 mx-0.5 align-baseline"
     />
   )
 }

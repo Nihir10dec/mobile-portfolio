@@ -125,7 +125,7 @@ export default function LinkedInApp() {
         <h2 style={{ color: text }} className="text-[16px] font-bold mb-3">Experience</h2>
         {experience.map((exp, i) => (
           <div key={i} className={`flex gap-3 ${i > 0 ? "mt-4 pt-4" : ""}`} style={i > 0 ? { borderTop: `1px solid ${border}` } : {}}>
-            <div className="w-[48px] h-[48px] rounded-lg flex items-center justify-center text-2xl flex-shrink-0"
+            <div className="w-[48px] h-[48px] rounded-lg flex items-center justify-center text-2xl shrink-0"
               style={{ background: isDark ? "#1a1a1a" : "#f0f0f0" }}
             >
               {exp.logo}

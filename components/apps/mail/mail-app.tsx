@@ -105,7 +105,7 @@ export default function MailApp() {
             value={replyEmail}
             onChange={(e) => setReplyEmail(e.target.value)}
             placeholder="your@email.com"
-            className="py-3 flex-1 bg-transparent border-none outline-none text-[15px]"
+            className="py-3 flex-1 bg-transparent border-none outline-hidden text-[15px]"
             style={{ color: text }}
           />
         </div>
@@ -117,7 +117,7 @@ export default function MailApp() {
             type="text"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            className="py-3 flex-1 bg-transparent border-none outline-none text-[15px]"
+            className="py-3 flex-1 bg-transparent border-none outline-hidden text-[15px]"
             style={{ color: text }}
             placeholder="Let's connect regarding..."
           />
@@ -136,7 +136,7 @@ export default function MailApp() {
             style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
           />
           <textarea
-            className="w-full h-[300px] bg-transparent border-none outline-none text-[16px] resize-none"
+            className="w-full h-[300px] bg-transparent border-none outline-hidden text-[16px] resize-none"
             style={{ color: text }}
             value={body}
             onChange={(e) => setBody(e.target.value)}
@@ -156,7 +156,7 @@ export default function MailApp() {
           {keyboardRows.map((row, rowIdx) => (
             <div key={rowIdx} className={`flex gap-[5px] ${rowIdx === 1 ? 'px-4' : ''}`}>
               {rowIdx === 2 && (
-                <div className="w-9 h-9 rounded-[7px] flex items-center justify-center flex-shrink-0"
+                <div className="w-9 h-9 rounded-[7px] flex items-center justify-center shrink-0"
                   style={{ background: isDark ? '#505050' : '#adb5bd' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill={isDark ? 'white' : '#333'}>
                     <path d="M12 4L4 12h5v7h6v-7h5L12 4z" />
@@ -170,7 +170,7 @@ export default function MailApp() {
                 </div>
               ))}
               {rowIdx === 2 && (
-                <div className="w-9 h-9 rounded-[7px] flex items-center justify-center flex-shrink-0"
+                <div className="w-9 h-9 rounded-[7px] flex items-center justify-center shrink-0"
                   style={{ background: isDark ? '#505050' : '#adb5bd' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill={isDark ? 'white' : '#333'}>
                     <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 12.59L17.59 17 14 13.41 10.41 17 9 15.59 12.59 12 9 8.41 10.41 7 14 10.59 17.59 7 19 8.41 15.41 12 19 15.59z" />

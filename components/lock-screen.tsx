@@ -85,7 +85,7 @@ export default function LockScreen() {
   return (
     <div
       ref={screenRef}
-      className="absolute inset-0 w-full h-full flex flex-col justify-between overflow-hidden touch-none select-none transition-transform outline-none"
+      className="absolute inset-0 w-full h-full flex flex-col justify-between overflow-hidden touch-none select-none transition-transform outline-hidden"
       style={{
         transform: `translateY(-${swipeOffset}px)`,
         transition: startY ? 'none' : 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'

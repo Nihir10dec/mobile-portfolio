@@ -186,7 +186,7 @@ function ProfilesScreen({
                   className="rounded-xl overflow-hidden"
                   style={{
                     outline: isPressed ? `3px solid ${profile.primary}` : "3px solid transparent",
-                    transition: "outline 150ms",
+                    transition: "outline-solid 150ms",
                     width: 80,
                     height: 80,
                   }}
@@ -216,7 +216,7 @@ function ContinueWatchingRow({ items, onSelect }: { items: CardItem[]; onSelect:
   return (
     <div className="flex gap-2.5 overflow-x-auto no-scrollbar pl-4 pr-2">
       {items.map((item) => (
-        <button key={item.id} className="flex-shrink-0 w-[132px] text-left" onClick={() => onSelect(item)}>
+        <button key={item.id} className="shrink-0 w-[132px] text-left" onClick={() => onSelect(item)}>
           {/* Thumbnail */}
           <div
             className="h-[78px] rounded overflow-hidden mb-1 relative"
@@ -225,9 +225,9 @@ function ContinueWatchingRow({ items, onSelect }: { items: CardItem[]; onSelect:
               ...(item.bgImage && { backgroundImage: `url('${item.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center" }),
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/75 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-2">
-              <p className="text-white text-[10px] font-semibold leading-tight drop-shadow">{item.title}</p>
+              <p className="text-white text-[10px] font-semibold leading-tight drop-shadow-sm">{item.title}</p>
             </div>
           </div>
           {/* Progress bar */}
@@ -247,11 +247,11 @@ function TallCardsRow({ items, onSelect }: { items: CardItem[]; onSelect: (i: Ca
       {items.map((item) => (
         <button
           key={item.id}
-          className="flex-shrink-0 rounded-lg overflow-hidden text-left"
+          className="shrink-0 rounded-lg overflow-hidden text-left"
           style={{ width: 102, height: 136, background: item.gradient, flexShrink: 0 }}
           onClick={() => onSelect(item)}
         >
-          <div className="h-full p-3 flex flex-col justify-end bg-gradient-to-t from-black/40 to-transparent">
+          <div className="h-full p-3 flex flex-col justify-end bg-linear-to-t from-black/40 to-transparent">
             <p className="text-white text-[11px] font-bold leading-tight">{item.title}</p>
             <p className="text-white/50 text-[9px] mt-0.5 leading-tight">{item.subtitle.split(" · ")[0]}</p>
           </div>
@@ -267,7 +267,7 @@ function WideCardsRow({ items, onSelect }: { items: CardItem[]; onSelect: (i: Ca
       {items.map((item) => (
         <button
           key={item.id}
-          className="flex-shrink-0 rounded-lg overflow-hidden text-left"
+          className="shrink-0 rounded-lg overflow-hidden text-left"
           style={{
             width: 218,
             height: 90,
@@ -277,7 +277,7 @@ function WideCardsRow({ items, onSelect }: { items: CardItem[]; onSelect: (i: Ca
           }}
           onClick={() => onSelect(item)}
         >
-          <div className="h-full p-3 flex flex-col justify-between bg-gradient-to-r from-black/70 via-black/30 to-transparent">
+          <div className="h-full p-3 flex flex-col justify-between bg-linear-to-r from-black/70 via-black/30 to-transparent">
             <p className="text-white/50 text-[8.5px] font-semibold uppercase tracking-wider">{item.subtitle}</p>
             <div>
               <p className="text-white text-[13px] font-bold leading-tight">{item.title}</p>
@@ -344,7 +344,7 @@ const BOTTOM_TABS = [
 function BottomNav() {
   const [active, setActive] = useState("home")
   return (
-    <div className="flex justify-around items-center py-2 bg-[#0a0a0a] border-t border-white/[0.06]">
+    <div className="flex justify-around items-center py-2 bg-[#0a0a0a] border-t border-white/6">
       {BOTTOM_TABS.map((tab) => (
         <button key={tab.id} onClick={() => setActive(tab.id)} className="flex flex-col items-center gap-0.5 px-1">
           {tab.icon(active === tab.id)}

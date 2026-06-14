@@ -39,7 +39,7 @@ export default function MapsApp() {
       </div>
 
       {/* Pin Location */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60px] flex flex-col items-center">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-60px] flex flex-col items-center">
         <div className="animate-bounce mb-1">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="#EA4335">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
@@ -65,7 +65,7 @@ export default function MapsApp() {
             type="text"
             placeholder="Search here"
             defaultValue="Mumbai, Maharashtra"
-            className="flex-1 bg-transparent border-none outline-none text-[15px] font-medium"
+            className="flex-1 bg-transparent border-none outline-hidden text-[15px] font-medium"
             style={{ color: text }}
           />
           <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold">

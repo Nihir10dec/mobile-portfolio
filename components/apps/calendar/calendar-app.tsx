@@ -64,7 +64,7 @@ function IOSCalendar() {
                 {v}
               </button>
               {eventDots[v] && v !== todayDate && (
-                <div className="flex gap-[2px] mt-[1px]">
+                <div className="flex gap-[2px] mt-px">
                   {eventDots[v].slice(0, 3).map((c, i) => (
                     <div key={i} className="w-1 h-1 rounded-full" style={{ background: c }} />
                   ))}
@@ -94,7 +94,7 @@ function IOSCalendar() {
               </div>
               <div className="flex-1 ml-2">
                 <div
-                  className="rounded-lg pl-3 pr-2 py-2 shadow-sm"
+                  className="rounded-lg pl-3 pr-2 py-2 shadow-xs"
                   style={{ background: `${ev.color}22`, borderLeft: `3px solid ${ev.color}` }}
                 >
                   <h3 className="text-[13px] font-bold truncate" style={{ color: text }}>{ev.title}</h3>
@@ -195,7 +195,7 @@ function AndroidCalendar() {
                 >
                   {v}
                 </span>
-                <div className="flex gap-[2px] h-[5px] mt-[1px]">
+                <div className="flex gap-[2px] h-[5px] mt-px">
                   {dots?.slice(0, 3).map((c, i) => (
                     <div key={i} className="w-[4px] h-[4px] rounded-full" style={{ background: c }} />
                   ))}

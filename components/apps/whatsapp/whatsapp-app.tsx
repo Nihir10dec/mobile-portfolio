@@ -61,7 +61,7 @@ export default function WhatsAppApp() {
           </button>
 
           <div
-            className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+            className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
             style={{ background: activeContact.gradient }}
           >
             <span className="text-white text-[15px] font-semibold">{activeContact.initial}</span>
@@ -124,7 +124,7 @@ export default function WhatsAppApp() {
                 )}
                 <div className={`flex ${msg.isOut ? "justify-end" : "justify-start"}`}>
                   <div
-                    className={`max-w-[80%] ${bubbleRadius} px-2.5 py-1.5 shadow-sm text-[14.5px] leading-relaxed relative
+                    className={`max-w-[80%] ${bubbleRadius} px-2.5 py-1.5 shadow-xs text-[14.5px] leading-relaxed relative
                       ${msg.isOut ? (isAndroid ? "rounded-tr-none" : "") : (isAndroid ? "rounded-tl-none" : "")}
                       ${isLastStalker ? "msg-pop" : ""}`}
                     style={{
@@ -180,7 +180,7 @@ export default function WhatsAppApp() {
               <input
                 type="text"
                 placeholder="Message"
-                className="flex-1 bg-transparent border-none outline-none text-[15px]"
+                className="flex-1 bg-transparent border-none outline-hidden text-[15px]"
                 style={{ color: text }}
                 disabled
               />
@@ -195,7 +195,7 @@ export default function WhatsAppApp() {
               )}
             </div>
             <div
-              className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
+              className="w-11 h-11 rounded-full flex items-center justify-center shrink-0"
               style={{ background: "#00a884" }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -359,7 +359,7 @@ function ChatRow({
       className="w-full flex items-center gap-3 px-4 py-2 active:bg-black/5"
     >
       <div
-        className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+        className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
         style={{ background: contact.gradient }}
       >
         <span className="text-white font-semibold text-lg">{contact.initial}</span>
@@ -367,14 +367,14 @@ function ChatRow({
       <div className="flex-1 min-w-0 border-b py-2" style={{ borderColor: border }}>
         <div className="flex justify-between items-baseline mb-0.5">
           <span className="text-[16px] font-semibold truncate" style={{ color: text }}>{contact.name}</span>
-          <span className="text-[12px] flex-shrink-0 ml-2" style={{ color: contact.unread ? "#007AFF" : textMuted }}>
+          <span className="text-[12px] shrink-0 ml-2" style={{ color: contact.unread ? "#007AFF" : textMuted }}>
             {contact.lastTime}
           </span>
         </div>
         <div className="flex items-center justify-between gap-1">
           <div className="flex items-center gap-1 min-w-0">
             {lastMsg.isOut && (
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="#53bdeb" className="flex-shrink-0">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#53bdeb" className="shrink-0">
                 <path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z" />
               </svg>
             )}
@@ -384,7 +384,7 @@ function ChatRow({
           </div>
           {contact.unread && (
             <div
-              className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ml-1"
+              className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 ml-1"
               style={{ background: isIOS ? "#007AFF" : "#00a884" }}
             >
               <span className="text-white text-[11px] font-bold leading-none">{contact.unread}</span>

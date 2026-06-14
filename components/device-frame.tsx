@@ -42,22 +42,22 @@ export default function DeviceFrame({ children }: DeviceFrameProps) {
           <>
             {/* Silent switch */}
             <div
-              className="absolute -left-[5px] top-[100px] w-[4px] h-[28px] rounded-l-sm"
+              className="absolute left-[-5px] top-[100px] w-[4px] h-[28px] rounded-l-sm"
               style={{ background: isDark ? "#2a2a2a" : "#c0c0c0" }}
             />
             {/* Volume Up */}
             <div
-              className="absolute -left-[5px] top-[148px] w-[4px] h-[44px] rounded-l-sm"
+              className="absolute left-[-5px] top-[148px] w-[4px] h-[44px] rounded-l-sm"
               style={{ background: isDark ? "#2a2a2a" : "#c0c0c0" }}
             />
             {/* Volume Down */}
             <div
-              className="absolute -left-[5px] top-[200px] w-[4px] h-[44px] rounded-l-sm"
+              className="absolute left-[-5px] top-[200px] w-[4px] h-[44px] rounded-l-sm"
               style={{ background: isDark ? "#2a2a2a" : "#c0c0c0" }}
             />
             {/* Power */}
             <div
-              className="absolute -right-[5px] top-[168px] w-[4px] h-[64px] rounded-r-sm"
+              className="absolute right-[-5px] top-[168px] w-[4px] h-[64px] rounded-r-sm"
               style={{ background: isDark ? "#2a2a2a" : "#c0c0c0" }}
             />
           </>
@@ -68,12 +68,12 @@ export default function DeviceFrame({ children }: DeviceFrameProps) {
           <>
             {/* Volume */}
             <div
-              className="absolute -right-[5px] top-[148px] w-[4px] h-[64px] rounded-r-sm"
+              className="absolute right-[-5px] top-[148px] w-[4px] h-[64px] rounded-r-sm"
               style={{ background: isDark ? "#2a2a2a" : "#c0c0c0" }}
             />
             {/* Power */}
             <div
-              className="absolute -right-[5px] top-[228px] w-[4px] h-[44px] rounded-r-sm"
+              className="absolute right-[-5px] top-[228px] w-[4px] h-[44px] rounded-r-sm"
               style={{ background: isDark ? "#2a2a2a" : "#c0c0c0" }}
             />
           </>
@@ -105,7 +105,7 @@ export default function DeviceFrame({ children }: DeviceFrameProps) {
                   <div className="flex items-center justify-between w-full px-2.5">
                     <div className="flex items-center gap-2 min-w-0">
                       <div
-                        className="w-[22px] h-[22px] rounded-md flex-shrink-0"
+                        className="w-[22px] h-[22px] rounded-md shrink-0"
                         style={{ background: nowPlaying.artwork }}
                       />
                       <span className="text-white text-[11px] font-medium truncate max-w-[110px]">
@@ -176,7 +176,7 @@ export default function DeviceFrame({ children }: DeviceFrameProps) {
           {/* Android Navigation Bar — in-flow so app content never slides under it, hidden while locked */}
           {!isIphone && !isLocked && (
             <div
-              className="flex-shrink-0 flex justify-center items-center gap-12 py-2"
+              className="shrink-0 flex justify-center items-center gap-12 py-2"
               style={{
                 background: isDark ? "#0a0a0a" : "#f8f8f8",
               }}

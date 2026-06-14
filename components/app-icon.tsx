@@ -50,7 +50,7 @@ export default function AppIcon({ id, label, bgColor, bgGradient, icon, badge, o
       </div>
 
       {/* Label */}
-      <span className="text-[11px] font-medium leading-tight text-center max-w-[68px] truncate text-[var(--on-surface)]"
+      <span className="text-[11px] font-medium leading-tight text-center max-w-[68px] truncate text-(--on-surface)"
         style={{ textShadow: "0 1px 2px rgba(0,0,0,0.5)" }}
       >
         {label}

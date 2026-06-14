@@ -55,7 +55,7 @@ export default function MediumApp() {
               href={article.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block px-4 py-6 transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.03] active:opacity-70"
+              className="block px-4 py-6 transition-colors hover:bg-black/2 dark:hover:bg-white/3 active:opacity-70"
             >
               {/* Author Context */}
               <div className="flex items-center gap-2 mb-3">
@@ -76,7 +76,7 @@ export default function MediumApp() {
                     {article.desc}
                   </p>
                 </div>
-                <div className="w-[80px] h-[80px] flex-shrink-0 bg-gray-200 mt-1" style={{ background: article.image }} />
+                <div className="w-[80px] h-[80px] shrink-0 bg-gray-200 mt-1" style={{ background: article.image }} />
               </div>
 
               {/* Footer metadata */}

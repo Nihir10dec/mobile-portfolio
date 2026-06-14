@@ -238,12 +238,12 @@ export default function InstagramApp() {
     const cfg = categoryConfig[activeTab as CareerTab]
     const content = getCareerContent()
     return (
-      <div className="grid grid-cols-3 gap-[1px]" style={{ background: gridGapColor }}>
+      <div className="grid grid-cols-3 gap-px" style={{ background: gridGapColor }}>
         {content.map((item) => (
           <button
             key={item.id}
             onClick={() => setSelectedPost({ post: item, tab: activeTab as CareerTab })}
-            className={`aspect-square bg-gradient-to-br ${cfg.gridFrom} ${cfg.gridTo} flex flex-col items-center justify-center gap-2 p-2 active:opacity-75 transition-opacity`}
+            className={`aspect-square bg-linear-to-br ${cfg.gridFrom} ${cfg.gridTo} flex flex-col items-center justify-center gap-2 p-2 active:opacity-75 transition-opacity`}
           >
             <div
               className={`w-11 h-11 rounded-xl ${cfg.accentBg} flex items-center justify-center shadow-lg`}
@@ -300,9 +300,9 @@ export default function InstagramApp() {
     return (
       <div className="absolute inset-0 z-20 flex flex-col overflow-y-auto no-scrollbar" style={{ background: bg }}>
         {/* Post header strip */}
-        <div className="flex items-center justify-between px-3 py-2.5 flex-shrink-0">
+        <div className="flex items-center justify-between px-3 py-2.5 shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className={`w-8 h-8 rounded-full ${cfg.accentBg} flex items-center justify-center flex-shrink-0`}>
+            <div className={`w-8 h-8 rounded-full ${cfg.accentBg} flex items-center justify-center shrink-0`}>
               <span className="text-white text-[10px] font-bold">{post.initials}</span>
             </div>
             <span className="text-[13px] font-semibold" style={{ color: textPrimary }}>{profileData.username}</span>
@@ -316,7 +316,7 @@ export default function InstagramApp() {
 
         {/* Hero */}
         <div
-          className={`w-full aspect-square bg-gradient-to-br ${cfg.heroFrom} ${cfg.heroVia} ${cfg.heroTo} relative flex items-center justify-center flex-shrink-0`}
+          className={`w-full aspect-square bg-linear-to-br ${cfg.heroFrom} ${cfg.heroVia} ${cfg.heroTo} relative flex items-center justify-center shrink-0`}
         >
           <div className={`absolute top-0 right-0 w-40 h-40 rounded-full ${cfg.accentBg} opacity-10 blur-3xl`} />
           <div className={`absolute bottom-0 left-0 w-28 h-28 rounded-full ${cfg.accentBg} opacity-10 blur-2xl`} />
@@ -334,7 +334,7 @@ export default function InstagramApp() {
         </div>
 
         {/* Action bar */}
-        <div className="px-4 pt-3 pb-2 border-b flex-shrink-0" style={{ borderColor }}>
+        <div className="px-4 pt-3 pb-2 border-b shrink-0" style={{ borderColor }}>
           <div className="flex justify-between items-center">
             <div className="flex gap-4 items-center">
               <button onClick={() => toggleLike(postKey)} className="active:scale-90 transition-transform">
@@ -389,7 +389,7 @@ export default function InstagramApp() {
 
       {/* ── Header ── */}
       <div
-        className="flex-shrink-0 flex justify-between items-center px-4 py-2.5 border-b z-30"
+        className="shrink-0 flex justify-between items-center px-4 py-2.5 border-b z-30"
         style={{ background: headerBg, borderColor }}
       >
         <button
@@ -420,7 +420,7 @@ export default function InstagramApp() {
           {/* Profile */}
           <div className="px-4 pt-3 pb-2">
             <div className="flex items-center gap-4">
-              <div className="w-[78px] h-[78px] rounded-full p-[2.5px] bg-gradient-to-tr from-blue-500 via-violet-500 to-rose-500 flex-shrink-0">
+              <div className="w-[78px] h-[78px] rounded-full p-[2.5px] bg-linear-to-tr from-blue-500 via-violet-500 to-rose-500 shrink-0">
                 <div className="w-full h-full rounded-full flex items-center justify-center" style={{ background: storyInnerBg }}>
                   <User size={30} style={{ color: textMuted }} />
                 </div>
@@ -468,10 +468,10 @@ export default function InstagramApp() {
             <button
               ref={(el) => { highlightButtonRefs.current["feed"] = el }}
               onClick={() => setActiveTab("feed")}
-              className="flex flex-col items-center gap-1.5 flex-shrink-0"
+              className="flex flex-col items-center gap-1.5 shrink-0"
             >
               <div
-                className={`w-[58px] h-[58px] rounded-full p-[2px] bg-gradient-to-tr from-pink-500 via-yellow-400 to-orange-500 transition-opacity ${activeTab === "feed" ? "opacity-100" : "opacity-35"}`}
+                className={`w-[58px] h-[58px] rounded-full p-[2px] bg-linear-to-tr from-pink-500 via-yellow-400 to-orange-500 transition-opacity ${activeTab === "feed" ? "opacity-100" : "opacity-35"}`}
               >
                 <div className="w-full h-full rounded-full flex items-center justify-center" style={{ background: storyInnerBg }}>
                   <LayoutList size={22} className={activeTab === "feed" ? "text-orange-400" : ""} style={{ color: activeTab === "feed" ? undefined : textMuted }} />
@@ -492,10 +492,10 @@ export default function InstagramApp() {
                   key={tab}
                   ref={(el) => { highlightButtonRefs.current[tab] = el }}
                   onClick={() => setActiveTab(tab)}
-                  className="flex flex-col items-center gap-1.5 flex-shrink-0"
+                  className="flex flex-col items-center gap-1.5 shrink-0"
                 >
                   <div
-                    className={`w-[58px] h-[58px] rounded-full p-[2px] bg-gradient-to-tr ${cfg.storyFrom} ${cfg.storyTo} transition-opacity ${isActive ? "opacity-100" : "opacity-35"}`}
+                    className={`w-[58px] h-[58px] rounded-full p-[2px] bg-linear-to-tr ${cfg.storyFrom} ${cfg.storyTo} transition-opacity ${isActive ? "opacity-100" : "opacity-35"}`}
                   >
                     <div className="w-full h-full rounded-full flex items-center justify-center" style={{ background: storyInnerBg }}>
                       <StoryIcon size={22} className={isActive ? cfg.textAccent : ""} style={{ color: isActive ? undefined : textMuted }} />

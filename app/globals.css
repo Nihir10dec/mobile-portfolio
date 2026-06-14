@@ -1,6 +1,229 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin 'tailwindcss-animate';
+
+@source '../*.{js,ts,jsx,tsx,mdx}';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans:
+    Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  --font-inter: Inter, sans-serif;
+  --font-mono: SF Mono, Fira Code, monospace;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-obsidian-surface: var(--surface);
+  --color-obsidian-surface-dim: var(--surface-dim);
+  --color-obsidian-surface-low: var(--surface-container-low);
+  --color-obsidian-surface-mid: var(--surface-container);
+  --color-obsidian-surface-high: var(--surface-container-high);
+  --color-obsidian-surface-highest: var(--surface-container-highest);
+  --color-obsidian-surface-bright: var(--surface-bright);
+  --color-obsidian-surface-variant: var(--surface-variant);
+
+  --color-brand-primary: var(--primary);
+  --color-brand-primary-container: var(--primary-container);
+  --color-brand-primary-dim: var(--primary-dim);
+  --color-brand-tertiary: var(--tertiary);
+  --color-brand-tertiary-container: var(--tertiary-container);
+
+  --color-text-primary: var(--on-surface);
+  --color-text-secondary: var(--on-surface-variant);
+  --color-text-outline: var(--outline);
+  --color-text-outline-variant: var(--outline-variant);
+
+  --color-app-netflix: var(--netflix-red);
+  --color-app-instagram: var(--instagram-pink);
+  --color-app-linkedin: var(--linkedin-blue);
+  --color-app-github: var(--github-dark);
+  --color-app-whatsapp: var(--whatsapp-green);
+  --color-app-spotify: var(--spotify-green);
+  --color-app-maps: var(--maps-green);
+  --color-app-notes: var(--notes-yellow);
+  --color-app-calendar: var(--calendar-red);
+  --color-app-mail: var(--mail-blue);
+  --color-app-phone: var(--phone-green);
+  --color-app-medium: var(--medium-dark);
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--ring));
+  --color-primary-foreground: hsl(var(--foreground));
+
+  --color-secondary: hsl(var(--muted));
+  --color-secondary-foreground: hsl(var(--foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-squircle: 22%;
+  --radius-device: 2.75rem;
+  --radius-device-inner: 2.35rem;
+
+  --spacing-device-w: 375px;
+  --spacing-device-h: 812px;
+
+  --shadow-device:
+    0 0 0 1px rgba(255, 255, 255, 0.05), 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(0, 122, 255, 0.08);
+  --shadow-device-light:
+    0 0 0 1px rgba(0, 0, 0, 0.1), 0 25px 50px -12px rgba(0, 0, 0, 0.3),
+    0 0 80px rgba(0, 122, 255, 0.05);
+  --shadow-icon-glow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-ambient: 0 0 120px 60px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-app-open: app-open 0.45s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+  --animate-app-close: app-close 0.35s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+  --animate-morph-device: morph-device 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+
+  --background-image-obsidian-gradient: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-container) 100%
+  );
+  --background-image-obsidian-streak: linear-gradient(
+    -35deg,
+    transparent 30%,
+    rgba(180, 120, 140, 0.08) 45%,
+    rgba(80, 160, 170, 0.06) 55%,
+    transparent 70%
+  );
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes app-open {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+      border-radius: 24px;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      border-radius: 0;
+    }
+  }
+  @keyframes app-close {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      border-radius: 0;
+    }
+    100% {
+      transform: scale(0.3);
+      opacity: 0;
+      border-radius: 24px;
+    }
+  }
+  @keyframes morph-device {
+    0% {
+      border-radius: 2.75rem;
+    }
+    50% {
+      border-radius: 1.5rem;
+    }
+    100% {
+      border-radius: 2.75rem;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Glassmorphism Utilities
+   ═══════════════════════════════════════════════════════════ */
+@utility glass {
+  background: rgba(38, 38, 38, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+@utility glass-light {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+@utility glass-dock {
+  background: rgba(30, 30, 30, 0.65);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+@utility glass-dock-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+@utility glass-status {
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+@utility no-scrollbar {
+  /* No-scroll for phone simulation */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+@utility squircle {
+  /* Squircle mask for iOS icons */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M100,50 C100,0 100,0 50,0 C0,0 0,0 0,50 C0,100 0,100 50,100 C100,100 100,100 100,50'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M100,50 C100,0 100,0 50,0 C0,0 0,0 0,50 C0,100 0,100 50,100 C100,100 100,100 100,50'/%3E%3C/svg%3E");
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
 
 /* ═══════════════════════════════════════════════════════════
    OS.portfolio — Digital Obsidian Design System
@@ -158,54 +381,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════
-   Glassmorphism Utilities
-   ═══════════════════════════════════════════════════════════ */
-@layer utilities {
-  .glass {
-    background: rgba(38, 38, 38, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  .glass-light {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  .glass-dock {
-    background: rgba(30, 30, 30, 0.65);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-  }
-  .glass-dock-light {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-  }
-  .glass-status {
-    background: rgba(0, 0, 0, 0.01);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  /* No-scroll for phone simulation */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* Squircle mask for iOS icons */
-  .squircle {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M100,50 C100,0 100,0 50,0 C0,0 0,0 0,50 C0,100 0,100 50,100 C100,100 100,100 100,50'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M100,50 C100,0 100,0 50,0 C0,0 0,0 0,50 C0,100 0,100 50,100 C100,100 100,100 100,50'/%3E%3C/svg%3E");
-    mask-size: contain;
-    -webkit-mask-size: contain;
   }
 }
 
