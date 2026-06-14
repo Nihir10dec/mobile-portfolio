@@ -376,7 +376,7 @@ export default function InstagramApp() {
               ))}
             </div>
           ) : null}
-          <p className={`text-xs mt-3 font-semibold ${cfg.textAccent}`}>View details →</p>
+          {/* <p className={`text-xs mt-3 font-semibold ${cfg.textAccent}`}>View details →</p> */}
         </div>
       </div>
     )

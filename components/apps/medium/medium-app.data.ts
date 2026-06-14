@@ -13,7 +13,7 @@ export const articles: Article[] = [
     readTime: "2 min read",
     tags: ["React", "AWS Cognito"],
     image: "linear-gradient(135deg, #FF9900 0%, #232F3E 100%)",
-    url: "https://blogs.demandhelm.com/enhancing-react-projects-with-aws-cognito-interation/"
+    url: "https://medium.com/@demandapi/enhancing-react-projects-with-aws-cognito-integration-ad2debb2d16d"
   },
   {
     author: portfolioData.personal.name,
@@ -24,7 +24,7 @@ export const articles: Article[] = [
     readTime: "4 min read",
     tags: ["AWS Cognito", "Security"],
     image: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    url: "https://blogs.demandhelm.com/aws-cognito-user-pool-creation/"
+    url: "https://medium.com/@demandapi/aws-cognito-user-pool-creation-step-by-step-guide-a1a63de910d4"
   },
   {
     author: portfolioData.personal.name,
@@ -35,7 +35,7 @@ export const articles: Article[] = [
     readTime: "4 min read",
     tags: ["AWS", "Authentication"],
     image: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    url: "https://blogs.demandhelm.com/aws-cognito-advantages-pricing-insights/"
+    url: "https://medium.com/@demandapi/aws-cognito-advantages-pricing-and-insights-3276d34783d0"
   },
   {
     author: portfolioData.personal.name,
@@ -46,7 +46,7 @@ export const articles: Article[] = [
     readTime: "7 min read",
     tags: ["Analytics", "UX"],
     image: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
-    url: "https://blogs.demandhelm.com/microsoft-clarity/"
+    url: "https://medium.com/@demandapi/microsoft-clarity-a-game-changer-for-website-optimization-ux-enhancement-d48a587bce99"
   },
   {
     author: portfolioData.personal.name,
