@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useAppNavigation } from "@/hooks/use-app-navigation"
 import { useDevice } from "@/hooks/use-device"
 import DeviceFrame from "@/components/device-frame"
@@ -32,6 +32,8 @@ export default function Home() {
 
   const { goHome } = useAppNavigation()
   const appOverlayRef = useRef<HTMLDivElement>(null)
+  const stageRef = useRef<HTMLDivElement>(null)
+  const [deviceScale, setDeviceScale] = useState(1)
 
   // Global keyboard: Escape returns to the home screen from any open app.
   useEffect(() => {
@@ -50,6 +52,28 @@ export default function Home() {
       appOverlayRef.current?.focus()
     }
   }, [currentApp])
+
+  // Scale the fixed-size device (375×812) down to fit the available stage area so
+  // it never overlaps the controls — critical on real phones shorter than 812px.
+  useEffect(() => {
+    const stage = stageRef.current
+    if (!stage) return
+    const DEVICE_W = 375
+    const DEVICE_H = 812
+    const update = () => {
+      const { width, height } = stage.getBoundingClientRect()
+      if (!width || !height) return
+      setDeviceScale(Math.min(width / DEVICE_W, height / DEVICE_H, 1))
+    }
+    update()
+    const ro = new ResizeObserver(update)
+    ro.observe(stage)
+    window.addEventListener("resize", update)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener("resize", update)
+    }
+  }, [])
 
   const renderApp = (id: typeof currentApp) => {
     switch (id) {
@@ -99,68 +123,76 @@ export default function Home() {
   )
 
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pb-32 lg:pb-0">
+    <div className="relative w-full h-dvh overflow-hidden flex flex-col items-center justify-center gap-[2.5dvh] py-[2.5dvh] lg:flex-row lg:gap-8 lg:h-auto lg:min-h-screen lg:py-0">
       <AmbientBackground />
 
-      {/* Main content area */}
-      <div className="relative z-10 flex items-center gap-8 pt-4">
-        {/* Device */}
-        <DragScroll disabled={isLocked}>
-          <DeviceFrame>
-            <div className="relative w-full h-full">
-              {/* Home screen (always rendered underneath) */}
-              <div
-                className={`absolute inset-0 transition-opacity duration-300 ${currentApp !== "home" && currentApp !== null ? "opacity-0 pointer-events-none" : "opacity-100"
-                  }`}
-              >
-                <HomeScreen />
-              </div>
+      {/* Device stage — scales the fixed-size device to fit the available height (esp. on mobile) */}
+      <div
+        ref={stageRef}
+        className="relative z-10 w-full flex-1 min-h-0 lg:h-device-h lg:w-device-w lg:flex-none"
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div style={{ width: 375, height: 812, transform: `scale(${deviceScale})`, transformOrigin: "center" }}>
+            <DragScroll disabled={isLocked}>
+              <DeviceFrame>
+                <div className="relative w-full h-full">
+                  {/* Home screen (always rendered underneath) */}
+                  <div
+                    className={`absolute inset-0 transition-opacity duration-300 ${currentApp !== "home" && currentApp !== null ? "opacity-0 pointer-events-none" : "opacity-100"
+                      }`}
+                  >
+                    <HomeScreen />
+                  </div>
 
-              {/* Active app overlay */}
-              {showOverlay && (
-                <div
-                  ref={appOverlayRef}
-                  tabIndex={-1}
-                  role="dialog"
-                  aria-modal="true"
-                  aria-label={`${appIdToShow ?? "app"} app`}
-                  className={`absolute inset-0 z-30 outline-hidden ${isEntering ? "app-enter" : isExiting ? "app-exit" : ""
-                    }`}
-                  style={{
-                    background: isDark ? "#000" : "#fff",
-                  }}
-                >
-                  {appContent}
+                  {/* Active app overlay */}
+                  {showOverlay && (
+                    <div
+                      ref={appOverlayRef}
+                      tabIndex={-1}
+                      role="dialog"
+                      aria-modal="true"
+                      aria-label={`${appIdToShow ?? "app"} app`}
+                      className={`absolute inset-0 z-30 outline-hidden ${isEntering ? "app-enter" : isExiting ? "app-exit" : ""
+                        }`}
+                      style={{
+                        background: isDark ? "#000" : "#fff",
+                      }}
+                    >
+                      {appContent}
+                    </div>
+                  )}
+
+                  {/* Lock Screen (rendered on top) */}
+                  <div
+                    className={`absolute inset-0 z-40 transition-transform duration-500 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] ${isLocked ? "translate-y-0" : "-translate-y-full pointer-events-none"
+                      }`}
+                  >
+                    <LockScreen />
+                  </div>
+
                 </div>
-              )}
-
-              {/* Lock Screen (rendered on top) */}
-              <div
-                className={`absolute inset-0 z-40 transition-transform duration-500 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] ${isLocked ? "translate-y-0" : "-translate-y-full pointer-events-none"
-                  }`}
-              >
-                <LockScreen />
-              </div>
-
-            </div>
-          </DeviceFrame>
-        </DragScroll>
-
-        {/* Side controls (desktop only) */}
-        <div className="hidden lg:flex flex-col items-center">
-          <DeviceControls />
+              </DeviceFrame>
+            </DragScroll>
+          </div>
         </div>
       </div>
 
-      {/* Mobile controls (when viewport is small) */}
-      <div className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
-        <div
-          className={`flex items-center rounded-full px-3 py-2 shadow-lg backdrop-blur-xl border ${isDark
-            ? "bg-black/60 border-white/10"
-            : "bg-white/70 border-black/10"
-            }`}
-        >
-          <DeviceControls orientation="horizontal" />
+      {/* Controls — beside the device on desktop, below it on mobile (no overlap) */}
+      <div className="relative z-50 shrink-0">
+        {/* Mobile: horizontal pill */}
+        <div className="lg:hidden">
+          <div
+            className={`flex items-center rounded-full px-3 py-2 shadow-lg backdrop-blur-xl border ${isDark
+              ? "bg-black/60 border-white/10"
+              : "bg-white/70 border-black/10"
+              }`}
+          >
+            <DeviceControls orientation="horizontal" />
+          </div>
+        </div>
+        {/* Desktop: vertical stack */}
+        <div className="hidden lg:flex flex-col items-center">
+          <DeviceControls />
         </div>
       </div>
     </div>
