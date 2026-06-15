@@ -141,7 +141,7 @@ export default function SettingsApp() {
           About
         </p>
         <div className="rounded-2xl overflow-hidden" style={{ background: groupBg }}>
-          <Row label="Edition" value="OS.portfolio" text={text} muted={textMuted} divider={divider} />
+          <Row label="Edition" value="Mobile Portfolio" text={text} muted={textMuted} divider={divider} />
           <Row label="Designer" value={portfolioData.personal.name} text={text} muted={textMuted} divider={divider} />
           <Row label="Location" value={portfolioData.personal.location} text={text} muted={textMuted} last />
         </div>

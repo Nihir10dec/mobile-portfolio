@@ -8,7 +8,7 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://nihir-shah.netlify.app"
 ).replace(/\/$/, "")
 
-export const SITE_NAME = "OS.portfolio"
+export const SITE_NAME = "Nihir Mobile Portfolio"
 
 export const SITE_TITLE = `${SITE_NAME} — ${portfolioData.personal.name}`
 

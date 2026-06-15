@@ -1,8 +1,8 @@
-# 📱 OS.portfolio
+# 📱 Mobile Portfolio
 
 > **What if your portfolio wasn't a website — it was a device?**
 
-OS.portfolio is a personal developer portfolio disguised as a fully interactive **smartphone simulation** running in the browser. Instead of a conventional scroll-through site, visitors land on a realistic phone lock screen, swipe to unlock, and explore a developer's identity through familiar app interfaces — Netflix for projects, Instagram for visual storytelling, LinkedIn for experience, GitHub for code, and more.
+Mobile Portfolio is a personal developer portfolio disguised as a fully interactive **smartphone simulation** running in the browser. Instead of a conventional scroll-through site, visitors land on a realistic phone lock screen, swipe to unlock, and explore a developer's identity through familiar app interfaces — Netflix for projects, Instagram for visual storytelling, LinkedIn for experience, GitHub for code, and more.
 
 Built by **[Nihir Shah](https://github.com/nihir10dec)**.
 

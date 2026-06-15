@@ -1,4 +1,4 @@
-# OS.portfolio — Project Context Document
+# Mobile Portfolio — Project Context Document
 
 > **Last updated:** 2026-06-03
 > **Author:** Nihir Shah
@@ -8,7 +8,7 @@
 
 ## 1. What Is This Project?
 
-**OS.portfolio** is a personal developer portfolio disguised as a fully interactive smartphone simulation running in the browser. Instead of a conventional portfolio website with sections and scroll, the visitor lands on a realistic phone lock screen, swipes to unlock, and explores the developer's identity through familiar app interfaces — Netflix for projects, Instagram for visual storytelling, LinkedIn for professional history, GitHub for code, and so on.
+**Mobile Portfolio** is a personal developer portfolio disguised as a fully interactive smartphone simulation running in the browser. Instead of a conventional portfolio website with sections and scroll, the visitor lands on a realistic phone lock screen, swipes to unlock, and explores the developer's identity through familiar app interfaces — Netflix for projects, Instagram for visual storytelling, LinkedIn for professional history, GitHub for code, and so on.
 
 The core concept: **"What if your portfolio wasn't a website — it was a device?"**
 

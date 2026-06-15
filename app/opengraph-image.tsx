@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og"
 import { portfolioData } from "@/data/portfolio"
 
 export const runtime = "edge"
-export const alt = "OS.portfolio — a portfolio that behaves like a phone"
+export const alt = "Nihir Mobile portfolio — a portfolio that behaves like a phone"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -36,7 +36,7 @@ export default function OpengraphImage() {
               letterSpacing: "0.04em",
             }}
           >
-            OS.PORTFOLIO
+            Nihir Mobile PORTFOLIO
           </div>
           <div
             style={{

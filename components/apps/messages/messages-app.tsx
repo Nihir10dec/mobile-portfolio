@@ -137,9 +137,9 @@ export default function MessagesApp() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `New ${template?.id} message from OS.portfolio`,
+          subject: `New ${template?.id} message from Mobile Portfolio`,
           email: emailOk ? email.trim() : undefined,
-          from_name: `${name} (OS.portfolio Messages)`,
+          from_name: `${name} (Mobile Portfolio Messages)`,
           message: `${message}\n\n— Name: ${name}\n— Email: ${emailOk ? email.trim() : "—"}\n— Phone: ${phoneOk ? phone.trim() : "—"}`,
           botcheck,
         }),

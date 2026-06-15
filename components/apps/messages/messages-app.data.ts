@@ -39,7 +39,7 @@ export const draftTemplates: DraftTemplate[] = [
       { field: "company" },
       ". We work on ",
       { field: "about" },
-      ". I came across your OS.portfolio and really liked it 👏 — I'd love to talk about a ",
+      ". I came across your Mobile Portfolio and really liked it 👏 — I'd love to talk about a ",
       { field: "role" },
       " opportunity.",
     ],
@@ -72,7 +72,7 @@ export const draftTemplates: DraftTemplate[] = [
     segments: [
       "Hi Nihir, I'm ",
       { field: "name" },
-      ". Just wanted to say I loved your OS.portfolio — especially ",
+      ". Just wanted to say I loved your Mobile Portfolio — especially ",
       { field: "liked" },
       ".",
     ],

@@ -23,7 +23,7 @@ export default function MailApp() {
   const [replyEmail, setReplyEmail] = useState("")
   const [subject, setSubject] = useState("Let's connect regarding...")
   const [body, setBody] = useState(
-    `Hi ${portfolioData.personal.firstName},\n\nI saw your OS.portfolio and wanted to reach out regarding a potential collaboration/opportunity.\n\nBest,\n[Your Name]`,
+    `Hi ${portfolioData.personal.firstName},\n\nI saw your Mobile Portfolio and it absolutely blew my mind. I wanted to reach out regarding a potential collaboration/opportunity.\n\nBest,\n[Your Name]`,
   )
   const [botcheck, setBotcheck] = useState("")
   const [sending, setSending] = useState(false)
@@ -48,9 +48,9 @@ export default function MailApp() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: subject.trim() || "New message from OS.portfolio",
+          subject: subject.trim() || "New message from Mobile Portfolio",
           email: replyEmail.trim() || undefined,
-          from_name: `${portfolioData.personal.firstName} Mobile OS.portfolio Contact`,
+          from_name: `${portfolioData.personal.firstName} Mobile Portfolio Contact`,
           message: body,
           botcheck,
         }),
