@@ -6,6 +6,7 @@ import { useAppNavigation } from "@/hooks/use-app-navigation"
 import { useNowPlaying } from "@/hooks/use-now-playing"
 import StatusBar from "./status-bar"
 import BatterySurprise from "./battery-surprise"
+import SystemPanels from "./panels/system-panels"
 
 interface DeviceFrameProps {
   children: React.ReactNode
@@ -206,6 +207,10 @@ export default function DeviceFrame({ children }: DeviceFrameProps) {
               </button>
             </div>
           )}
+
+          {/* Pull-down notification / control surfaces — span the full screen
+              (including the status-bar edge) so swipes start from the very top. */}
+          <SystemPanels />
 
           {/* Hidden low-battery surprise — overlays everything, clipped to screen */}
           <BatterySurprise />

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useAppNavigation } from "@/hooks/use-app-navigation"
 import { useDevice } from "@/hooks/use-device"
+import { useSystemPanel } from "@/hooks/use-system-panel"
 import DeviceFrame from "@/components/device-frame"
 import DeviceControls from "@/components/device-controls"
 import DragScroll from "@/components/drag-scroll"
@@ -31,6 +32,7 @@ export default function Home() {
   const isDark = theme === "dark"
 
   const { goHome } = useAppNavigation()
+  const { panel, closePanel } = useSystemPanel()
   const appOverlayRef = useRef<HTMLDivElement>(null)
   const stageRef = useRef<HTMLDivElement>(null)
   const [deviceScale, setDeviceScale] = useState(1)
@@ -38,13 +40,18 @@ export default function Home() {
   // Global keyboard: Escape returns to the home screen from any open app.
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !isLocked && currentApp !== "home" && currentApp !== null) {
+      if (e.key !== "Escape" || isLocked) return
+      if (panel !== "none") {
+        closePanel()
+        return
+      }
+      if (currentApp !== "home" && currentApp !== null) {
         goHome()
       }
     }
     window.addEventListener("keydown", onKeyDown)
     return () => window.removeEventListener("keydown", onKeyDown)
-  }, [goHome, isLocked, currentApp])
+  }, [goHome, isLocked, currentApp, panel, closePanel])
 
   // Move focus into an app when it opens so keyboard users land in context.
   useEffect(() => {

@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import { AppNavigationProvider } from "@/hooks/use-app-navigation"
 import { NowPlayingProvider } from "@/hooks/use-now-playing"
 import { BatteryProvider } from "@/hooks/use-battery"
+import { SystemPanelProvider } from "@/hooks/use-system-panel"
 import { Toaster } from "@/components/ui/sonner"
 import { portfolioData } from "@/data/portfolio"
 import { SITE_URL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION, SOCIAL_URLS } from "@/lib/site"
@@ -96,7 +97,9 @@ export default function RootLayout({
           <AppNavigationProvider>
             <NowPlayingProvider>
               <BatteryProvider>
-                <main>{children}</main>
+                <SystemPanelProvider>
+                  <main>{children}</main>
+                </SystemPanelProvider>
               </BatteryProvider>
             </NowPlayingProvider>
           </AppNavigationProvider>

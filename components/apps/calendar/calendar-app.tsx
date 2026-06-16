@@ -3,7 +3,7 @@
 import { useAppNavigation } from "@/hooks/use-app-navigation"
 import { useDevice } from "@/hooks/use-device"
 import { useState } from "react"
-import { today, todayDate, monthName, dayName, shortDay, events, monthDays, eventDots } from "./calendar-app.data"
+import { today, todayDate, monthName, dayName, shortDay, eventsByDate, monthDays, eventDots } from "./calendar-app.data"
 
 // ─── iOS Apple Calendar ────────────────────────────────────────────────────
 
@@ -11,6 +11,7 @@ function IOSCalendar() {
   const { closeApp } = useAppNavigation()
   const { theme } = useDevice()
   const isDark = theme === "dark"
+  const [selectedDay, setSelectedDay] = useState(todayDate)
 
   const bg = isDark ? "#000000" : "#ffffff"
   const panelBg = isDark ? "#1c1c1e" : "#f2f2f7"
@@ -52,57 +53,79 @@ function IOSCalendar() {
         </div>
         <div className="grid grid-cols-7 gap-y-1 place-items-center">
           <div /><div /><div />
-          {monthDays.map((v) => (
-            <div key={v} className="relative flex flex-col items-center">
-              <button
-                className="w-8 h-8 rounded-full flex items-center justify-center text-[15px] font-medium"
-                style={{
-                  background: v === todayDate ? red : "transparent",
-                  color: v === todayDate ? "#fff" : text,
-                }}
-              >
-                {v}
-              </button>
-              {eventDots[v] && v !== todayDate && (
-                <div className="flex gap-[2px] mt-px">
-                  {eventDots[v].slice(0, 3).map((c, i) => (
-                    <div key={i} className="w-1 h-1 rounded-full" style={{ background: c }} />
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+          {monthDays.map((v) => {
+            const isToday = v === todayDate
+            const isSelected = v === selectedDay
+            return (
+              <div key={v} className="relative flex flex-col items-center">
+                <button
+                  onClick={() => setSelectedDay(v)}
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-[15px] font-medium"
+                  style={{
+                    background: isToday ? red : isSelected ? `${red}33` : "transparent",
+                    color: isToday ? "#fff" : isSelected ? red : text,
+                  }}
+                >
+                  {v}
+                </button>
+                {eventDots[v] && !isToday && (
+                  <div className="flex gap-0.5 mt-px">
+                    {eventDots[v].slice(0, 3).map((c, i) => (
+                      <div key={i} className="w-1 h-1 rounded-full" style={{ background: c }} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
 
       {/* Day Schedule */}
       <div className="flex-1 flex flex-col pt-2">
         <div className="px-4 py-2">
-          <h2 className="text-[20px] font-bold" style={{ color: text }}>{dayName}</h2>
+          <h2 className="text-[20px] font-bold" style={{ color: text }}>
+            {selectedDay === todayDate
+              ? dayName
+              : new Date(today.getFullYear(), today.getMonth(), selectedDay)
+                  .toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}
+          </h2>
         </div>
 
         <div className="px-2 pb-20 relative">
           <div className="absolute left-14 top-0 bottom-0 border-l" style={{ borderColor }} />
-          <div className="absolute left-12 right-2 border-t z-20 flex items-center" style={{ top: "80px", borderColor: red }}>
-            <div className="w-2 h-2 rounded-full absolute -left-1" style={{ background: red }} />
-          </div>
+          {selectedDay === todayDate && (
+            <div className="absolute left-12 right-2 border-t z-20 flex items-center" style={{ top: "80px", borderColor: red }}>
+              <div className="w-2 h-2 rounded-full absolute -left-1" style={{ background: red }} />
+            </div>
+          )}
 
-          {events.map((ev, i) => (
-            <div key={i} className="flex" style={{ marginTop: i === 0 ? "16px" : "12px" }}>
-              <div className="w-12 text-right pr-2 shrink-0">
-                <span className="text-[12px] font-medium" style={{ color: textMuted }}>{ev.time}</span>
-              </div>
-              <div className="flex-1 ml-2">
-                <div
-                  className="rounded-lg pl-3 pr-2 py-2 shadow-xs"
-                  style={{ background: `${ev.color}22`, borderLeft: `3px solid ${ev.color}` }}
-                >
-                  <h3 className="text-[13px] font-bold truncate" style={{ color: text }}>{ev.title}</h3>
-                  <p className="text-[11px] mt-0.5 truncate" style={{ color: textMuted }}>{ev.location}</p>
+          {(eventsByDate[selectedDay] ?? []).length > 0 ? (
+            (eventsByDate[selectedDay] ?? []).map((ev, i) => (
+              <div key={i} className="flex" style={{ marginTop: i === 0 ? "16px" : "12px" }}>
+                <div className="w-12 text-right pr-2 shrink-0">
+                  <span className="text-[12px] font-medium" style={{ color: textMuted }}>{ev.time}</span>
+                </div>
+                <div className="flex-1 ml-2">
+                  <div
+                    className="rounded-lg pl-3 pr-2 py-2 shadow-xs"
+                    style={{ background: `${ev.color}22`, borderLeft: `3px solid ${ev.color}` }}
+                  >
+                    <h3 className="text-[13px] font-bold truncate" style={{ color: text }}>{ev.title}</h3>
+                    <p className="text-[11px] mt-0.5 truncate" style={{ color: textMuted }}>{ev.location}</p>
+                  </div>
                 </div>
               </div>
+            ))
+          ) : (
+            <div className="flex flex-col items-center justify-center py-12 gap-2 mt-4">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="4" width="18" height="18" rx="2" stroke={textMuted} strokeWidth="1.5" />
+                <path d="M16 2v4M8 2v4M3 10h18" stroke={textMuted} strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <p className="text-[13px]" style={{ color: textMuted }}>No events</p>
             </div>
-          ))}
+          )}
         </div>
       </div>
 
@@ -136,7 +159,7 @@ function AndroidCalendar() {
 
   const days = ["S", "M", "T", "W", "T", "F", "S"]
 
-  const selectedEvents = selectedDay === todayDate ? events : []
+  const selectedEvents = eventsByDate[selectedDay] ?? []
 
   return (
     <div className="w-full h-full flex flex-col overflow-hidden" style={{ background: bg }}>

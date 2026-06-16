@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react"
 import { trackEvent } from "@/lib/analytics"
 
-type AppId =
+export type AppId =
   | "home"
   | "netflix"
   | "instagram"

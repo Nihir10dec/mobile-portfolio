@@ -208,9 +208,9 @@ export default function HomeScreen() {
 
   const dockApps = pick(["phone", "messages", "browser", "settings"])
   const mainApps = pick([
-    "mail", "instagram", "netflix", "whatsapp",
-    "notes", "maps", "calendar", "medium",
-    "spotify", "chatgpt", "linkedin", "github",
+    "instagram", "linkedin", "netflix", "whatsapp",
+    "maps", "calendar", "notes", "medium",
+    "spotify", "chatgpt", "mail", "github",
   ])
 
   return (
