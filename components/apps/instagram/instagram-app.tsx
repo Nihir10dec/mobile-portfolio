@@ -119,6 +119,7 @@ export default function InstagramApp() {
   const captionBg = isDark ? "#0a0a0a" : "#ffffff"
   const gridGapColor = isDark ? "#000000" : "#ffffff"
   const iconColor = isDark ? "#ffffff" : "#262626"
+  const cardBg = isDark ? "#1b1f23" : "#fff"
 
   const [activeTab, setActiveTab] = useState<Tab>("feed")
   const [selectedPost, setSelectedPost] = useState<SelectedPost>(null)
@@ -421,8 +422,14 @@ export default function InstagramApp() {
           <div className="px-4 pt-3 pb-2">
             <div className="flex items-center gap-4">
               <div className="w-[78px] h-[78px] rounded-full p-[2.5px] bg-linear-to-tr from-blue-500 via-violet-500 to-rose-500 shrink-0">
-                <div className="w-full h-full rounded-full flex items-center justify-center" style={{ background: storyInnerBg }}>
-                  <User size={30} style={{ color: textMuted }} />
+                <div className="w-full h-full rounded-full flex items-center justify-center" style={{
+                  backgroundColor: cardBg,
+                  // border: `1px solid ${border}`,
+                  backgroundImage: "url('/images/avatar-profile.png')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}>
+                  {/* <User size={30} style={{ color: textMuted }} /> */}
                 </div>
               </div>
               <div className="flex-1 flex justify-around">

@@ -6,7 +6,7 @@ Mobile Portfolio is a personal developer portfolio disguised as a fully interact
 
 Built by **[Nihir Shah](https://github.com/nihir10dec)**.
 
-🔗 **Live demo:** [nihir-shah.netlify.app](https://nihir-shah.netlify.app)
+🔗 **Live demo:** [nihir-mobile-portfolio.vercel.app](https://nihir-mobile-portfolio.vercel.app/)
 
 ---
 
@@ -69,8 +69,8 @@ Built by **[Nihir Shah](https://github.com/nihir10dec)**.
 
 ```bash
 # Clone the repo
-git clone https://github.com/nihir10dec/os-portfolio.git
-cd os-portfolio
+git clone https://github.com/nihir10dec/mobile-portfolio.git
+cd mobile-portfolio
 
 # Install dependencies
 pnpm install

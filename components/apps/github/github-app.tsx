@@ -59,9 +59,11 @@ export default function GitHubApp() {
         <div className="flex items-start gap-4">
           <div className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-3xl shrink-0 bg-cover bg-center"
             style={{
-              background: cardBg,
+              backgroundColor: cardBg,
               border: `1px solid ${border}`,
-              backgroundImage: "url('/images/profile_avatar.png')"
+              backgroundImage: "url('/images/avatar-profile.png')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
             }}
           >
           </div>

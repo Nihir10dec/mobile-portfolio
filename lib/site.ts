@@ -5,7 +5,7 @@ import { portfolioData } from "@/data/portfolio"
  * Override per-environment with NEXT_PUBLIC_SITE_URL (e.g. on Vercel/Netlify).
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://nihir-shah.netlify.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://nihir-mobile-portfolio.vercel.app/"
 ).replace(/\/$/, "")
 
 export const SITE_NAME = "Nihir Mobile Portfolio"

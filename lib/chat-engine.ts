@@ -12,7 +12,7 @@ import { portfolioData } from "@/data/portfolio"
  * server (Node runtime) rather than a wrapper around a third-party API.
  */
 
-const { personal, social, skills, experience, projects, articles } = portfolioData
+const { personal, social, skills, experience, projects, articles, education } = portfolioData
 
 /* ------------------------------------------------------------------ */
 /* Variation helpers                                                   */
@@ -60,24 +60,28 @@ type Intent =
   | "skills"
   | "experience"
   | "projects"
+  | "education"
   | "articles"
   | "contact"
   | "location"
   | "hire"
   | "thanks"
+  | "help"
   | "fallback"
 
 const INTENT_KEYWORDS: Record<Exclude<Intent, "fallback">, string[]> = {
-  greeting: ["hi", "hello", "hey", "yo", "sup", "greetings", "howdy"],
-  identity: ["who", "about", "yourself", "bio", "intro", "tell me about", "what do you do"],
-  skills: ["skill", "stack", "tech", "technology", "language", "tools", "framework", "know", "expert"],
-  experience: ["experience", "work", "job", "career", "company", "companies", "role", "employer", "background"],
-  projects: ["project", "build", "built", "portfolio", "app", "product", "made", "ship", "shipped"],
-  articles: ["article", "blog", "write", "writing", "post", "medium", "read"],
-  contact: ["contact", "email", "reach", "connect", "linkedin", "github", "social", "message", "dm"],
-  location: ["where", "location", "based", "live", "city", "country", "remote"],
-  hire: ["hire", "available", "availability", "open to", "freelance", "opportunity", "recruit", "join"],
-  thanks: ["thanks", "thank you", "thx", "appreciate", "cheers"],
+  greeting: ["hi", "hello", "hey", "yo", "sup", "greetings", "howdy", "good morning", "good afternoon", "morning", "gm", "hiya", "what's up", "wassup"],
+  identity: ["who", "about", "yourself", "bio", "intro", "tell me about", "what do you do", "name", "who are you", "describe", "summary", "overview", "introduce", "what's your", "profile"],
+  skills: ["skill", "stack", "tech", "technology", "language", "tools", "framework", "know", "expert", "programming", "coding", "proficient", "specialize", "frontend", "backend", "fullstack", "full stack", "what can", "capabilities", "proficiency", "experienced in"],
+  experience: ["experience", "work", "job", "career", "company", "companies", "role", "employer", "background", "worked", "working", "years", "how long", "past", "history", "previously", "position", "professional", "internship"],
+  projects: ["project", "build", "built", "portfolio", "app", "product", "made", "ship", "shipped", "created", "developed", "what have you", "side project", "open source", "repo", "repository", "demo", "launch", "launched"],
+  education: ["education", "degree", "studied", "university", "college", "school", "graduated", "graduate", "major", "certification", "certifications", "course", "diploma", "bachelor", "master", "qualification"],
+  articles: ["article", "blog", "write", "writing", "post", "medium", "read", "published", "newsletter", "tutorial", "author", "hashnode", "dev.to", "substack", "technical writing"],
+  contact: ["contact", "email", "reach", "connect", "linkedin", "github", "social", "message", "dm", "twitter", "x", "discord", "get in touch", "how to contact", "phone", "chat", "talk to", "reach out"],
+  location: ["where", "location", "based", "live", "city", "country", "remote", "timezone", "country", "onsite", "on-site", "wfh", "hybrid", "in-person", "region"],
+  hire: ["hire", "available", "availability", "open to", "freelance", "opportunity", "recruit", "join", "work together", "collaboration", "contract", "consulting", "part-time", "full-time", "open for work", "looking for", "taking on"],
+  thanks: ["thanks", "thank you", "thx", "appreciate", "cheers", "ty", "helpful", "awesome", "great", "nice", "cool", "perfect", "love it", "amazing"],
+  help: ["help", "what can you", "what can i ask", "what do you know", "options", "guide", "menu", "topics", "commands", "what questions", "how does this work"],
 }
 
 function classify(message: string): Intent {
@@ -166,6 +170,20 @@ function buildResponse(intent: Intent, rng: () => number): string {
       )
     }
 
+    case "education": {
+      const lines = education
+        .map((e) => `• ${e.degree} — ${e.institution} (${e.duration})`)
+        .join("\n")
+      return pick(
+        [
+          `${name}'s academic background:\n${lines}`,
+          `Here's the education history:\n${lines}`,
+          `${name} studied:\n${lines}`,
+        ],
+        rng,
+      )
+    }
+
     case "articles": {
       const lines = articles.map((a) => `• "${a.title}" in ${a.in} (${a.readTime})`).join("\n")
       return pick(
@@ -211,6 +229,16 @@ function buildResponse(intent: Intent, rng: () => number): string {
     case "thanks":
       return pick(
         [`Anytime! 🙌`, `Happy to help — ask away if you have more questions.`, `You're welcome!`],
+        rng,
+      )
+
+    case "help":
+      return pick(
+        [
+          `You can ask me about ${name}'s skills & tech stack, work experience, projects, education, articles, location, or how to hire him.`,
+          `Topics I cover: who ${name} is, his tech stack, past jobs, projects he's built, education, writing, and how to get in touch.`,
+          `Try asking things like "What's your stack?", "Tell me about your projects", "Where are you based?", or "How can I hire you?"`,
+        ],
         rng,
       )
 

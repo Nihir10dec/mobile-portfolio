@@ -36,7 +36,7 @@ export default function OpengraphImage() {
               letterSpacing: "0.04em",
             }}
           >
-            Nihir Mobile PORTFOLIO
+            Nihir Mobile Portfolio
           </div>
           <div
             style={{

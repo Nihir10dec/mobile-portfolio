@@ -4,6 +4,7 @@ import { useAppNavigation } from "@/hooks/use-app-navigation"
 import { useDevice } from "@/hooks/use-device"
 import { portfolioData } from "@/data/portfolio"
 import { experience, skills } from "./linkedin-app.data"
+import Image from "next/image"
 
 export default function LinkedInApp() {
   const { closeApp } = useAppNavigation()
@@ -52,12 +53,13 @@ export default function LinkedInApp() {
         />
         {/* Profile pic */}
         <div className="absolute left-4" style={{ top: "60px" }}>
-          <div
-            className="w-[80px] h-[80px] rounded-full flex items-center justify-center text-3xl border-4 bg-cover bg-center"
+          <div className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-3xl shrink-0 bg-cover bg-center"
             style={{
-              borderColor: cardBg,
-              background: isDark ? "#333" : "#e0e0e0",
-              backgroundImage: "url('/images/profile_avatar.png')"
+              backgroundColor: cardBg,
+              border: `1px solid ${border}`,
+              backgroundImage: "url('/images/avatar-profile.png')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
             }}
           >
           </div>

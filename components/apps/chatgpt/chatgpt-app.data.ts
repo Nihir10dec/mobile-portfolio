@@ -5,6 +5,8 @@ export const suggestedPrompts = [
   "How can I contact him?",
   "What's his work experience?",
   "Is he open to opportunities?",
+  "Help Me..!!",
+  "Where has he graduated from and when?"
 ]
 
 export const greetingMessage =
