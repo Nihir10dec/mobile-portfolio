@@ -10,8 +10,8 @@ export const playlists: Playlist[] = [
 
 export const recentTracks: Track[] = [
   { title: "Building the Engine", album: "System Design", duration: "3:42" },
-  { title: "TypeScript Blues", album: "Strict Mode", duration: "4:15" },
+  { title: "TypeScript Blues", album: "Strict Mode", duration: "4:15", image: "/typescript.svg" },
   { title: "Deploy on Friday", album: "Living Dangerously", duration: "2:58" },
-  { title: "Async/Await", album: "Promises", duration: "5:10" },
-  { title: "React Context", album: "State Management", duration: "3:30" },
+  { title: "Async/Await", album: "Promises", duration: "5:10", },
+  { title: "ReactJS / NextJS", album: "Web Development", duration: "3:30", image: "/react.svg" },
 ]

@@ -171,7 +171,7 @@ export default function LockScreen() {
             </div>
           )}
           <span
-            className={`text-[13px] font-medium tracking-wide ${isFirstVisit ? "opacity-100" : "opacity-80 motion-safe:animate-pulse"}`}
+            className={`text-[16px] font-medium tracking-wide ${isFirstVisit ? "opacity-100" : "opacity-80 motion-safe:animate-pulse"}`}
             style={{ color: isDark ? "white" : "black" }}
           >
             {isFirstVisit ? "Welcome — swipe up to explore" : "Swipe up to unlock"}

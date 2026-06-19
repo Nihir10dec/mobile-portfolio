@@ -180,8 +180,14 @@ export default function InstagramApp() {
             {/* Post header */}
             <div className="flex items-center justify-between px-3 py-2.5">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: avatarBg }}>
-                  <User size={16} style={{ color: textMuted }} />
+                <div className="w-8 h-8 rounded-full p-[2.5px] bg-linear-to-tr from-blue-500 via-violet-500 to-rose-500 shrink-0">
+                  <div className="w-full h-full rounded-full flex items-center justify-center" style={{
+                    backgroundColor: cardBg,
+                    backgroundImage: "url('/images/avatar-profile.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}>
+                  </div>
                 </div>
                 <span className="text-[13px] font-semibold" style={{ color: textPrimary }}>{profileData.username}</span>
               </div>
@@ -240,22 +246,26 @@ export default function InstagramApp() {
     const content = getCareerContent()
     return (
       <div className="grid grid-cols-3 gap-px" style={{ background: gridGapColor }}>
-        {content.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => setSelectedPost({ post: item, tab: activeTab as CareerTab })}
-            className={`aspect-square bg-linear-to-br ${cfg.gridFrom} ${cfg.gridTo} flex flex-col items-center justify-center gap-2 p-2 active:opacity-75 transition-opacity`}
-          >
-            <div
-              className={`w-11 h-11 rounded-xl ${cfg.accentBg} flex items-center justify-center shadow-lg`}
+        {content.map((item) => {
+          const Logo = item.logo;
+          return (
+            <button
+              key={item.id}
+              onClick={() => setSelectedPost({ post: item, tab: activeTab as CareerTab })}
+              className={`aspect-square bg-linear-to-br ${cfg.gridFrom} ${cfg.gridTo} flex flex-col items-center justify-center gap-2 p-2 active:opacity-75 transition-opacity`}
             >
-              <span className="text-white text-sm font-bold">{item.initials}</span>
-            </div>
-            <span className="text-white text-[9px] font-medium text-center leading-tight line-clamp-2 opacity-80">
-              {item.title ?? item.company ?? item.institution ?? item.category}
-            </span>
-          </button>
-        ))}
+              <div
+                className={`w-11 h-11 rounded-xl ${cfg.accentBg} flex items-center justify-center shadow-lg`}
+              >
+                {Logo ? <Logo />
+                  : <span className="text-white text-sm font-bold">{item.initials}</span>}
+              </div>
+              <span className="text-white text-[9px] font-medium text-center leading-tight line-clamp-2 opacity-80">
+                {item.title ?? item.company ?? item.institution ?? item.category}
+              </span>
+            </button>
+          );
+        })}
       </div>
     )
   }
@@ -274,6 +284,7 @@ export default function InstagramApp() {
     let subtitle = ""
     let description = ""
     let pills: string[] | null = null
+    const Logo = post.logo
 
     if (tab === "work") {
       title = post.company
@@ -323,7 +334,8 @@ export default function InstagramApp() {
           <div className={`absolute bottom-0 left-0 w-28 h-28 rounded-full ${cfg.accentBg} opacity-10 blur-2xl`} />
           <div className="relative flex flex-col items-center gap-4 px-8 text-center">
             <div className={`w-24 h-24 rounded-2xl ${cfg.accentBg} flex items-center justify-center shadow-2xl`}>
-              <span className="text-white text-3xl font-bold tracking-tight">{post.initials}</span>
+              {Logo ? <Logo size={40} />
+                : <span className="text-white text-3xl font-bold tracking-tight">{post.initials}</span>}
             </div>
             <div>
               <h2 className="text-white text-xl font-bold leading-tight">{title}</h2>
@@ -377,7 +389,7 @@ export default function InstagramApp() {
               ))}
             </div>
           ) : null}
-          {/* <p className={`text-xs mt-3 font-semibold ${cfg.textAccent}`}>View details →</p> */}
+          {post.url && <a href={post.url} target="_blank" className={`text-xs mt-3 font-semibold ${cfg.textAccent}`}>Read More →</a>}
         </div>
       </div>
     )

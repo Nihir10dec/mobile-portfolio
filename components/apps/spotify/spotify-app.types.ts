@@ -8,4 +8,5 @@ export interface Track {
   title: string
   album: string
   duration: string
+  image?: string
 }

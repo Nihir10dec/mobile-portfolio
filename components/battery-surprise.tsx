@@ -28,7 +28,7 @@ const CHARGE_OPTIONS: ChargeOption[] = [
   {
     label: "Star on GitHub",
     sublabel: "+40% — fuels late-night commits",
-    url: GITHUB_URL,
+    url: `${GITHUB_URL}/mobile-portfolio`,
     toast: "⚡ Thanks for the star — battery topped up!",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

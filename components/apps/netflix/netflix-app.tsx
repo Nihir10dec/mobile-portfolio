@@ -14,26 +14,26 @@ function AvatarSVG({ k, size = 72 }: { k: ProfileKey; size?: number }) {
     <svg width={s} height={s} viewBox="0 0 72 72" fill="none">
       <defs>
         <radialGradient id="grad-rec" cx="38%" cy="32%" r="68%">
-          <stop offset="0%" stopColor="#60A5FA"/>
-          <stop offset="100%" stopColor="#1E40AF"/>
+          <stop offset="0%" stopColor="#60A5FA" />
+          <stop offset="100%" stopColor="#1E40AF" />
         </radialGradient>
       </defs>
-      <rect width="72" height="72" rx="10" fill="url(#grad-rec)"/>
+      <rect width="72" height="72" rx="10" fill="url(#grad-rec)" />
       {/* Head */}
-      <circle cx="36" cy="28" r="14" fill="#BFDBFE"/>
+      <circle cx="36" cy="28" r="14" fill="#BFDBFE" />
       {/* Eyes */}
-      <circle cx="30" cy="25" r="2.8" fill="#1E3A8A"/>
-      <circle cx="42" cy="25" r="2.8" fill="#1E3A8A"/>
-      <circle cx="30.8" cy="24.2" r="1" fill="white"/>
-      <circle cx="42.8" cy="24.2" r="1" fill="white"/>
+      <circle cx="30" cy="25" r="2.8" fill="#1E3A8A" />
+      <circle cx="42" cy="25" r="2.8" fill="#1E3A8A" />
+      <circle cx="30.8" cy="24.2" r="1" fill="white" />
+      <circle cx="42.8" cy="24.2" r="1" fill="white" />
       {/* Smile */}
-      <path d="M29 31.5 Q36 37 43 31.5" stroke="#1E3A8A" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+      <path d="M29 31.5 Q36 37 43 31.5" stroke="#1E3A8A" strokeWidth="1.8" fill="none" strokeLinecap="round" />
       {/* Shoulder */}
-      <path d="M18 62 Q22 47 36 45 Q50 47 54 62 Z" fill="#BFDBFE"/>
+      <path d="M18 62 Q22 47 36 45 Q50 47 54 62 Z" fill="#BFDBFE" />
       {/* Tie */}
-      <path d="M33.5 45 L36 49 L38.5 45" fill="#93C5FD"/>
-      <path d="M35 49 L33.2 59 L36 56 L38.8 59 L37 49 Z" fill="#E50914"/>
-      <line x1="33.2" y1="51" x2="38.8" y2="51" stroke="#B91C1C" strokeWidth="0.8"/>
+      <path d="M33.5 45 L36 49 L38.5 45" fill="#93C5FD" />
+      <path d="M35 49 L33.2 59 L36 56 L38.8 59 L37 49 Z" fill="#E50914" />
+      <line x1="33.2" y1="51" x2="38.8" y2="51" stroke="#B91C1C" strokeWidth="0.8" />
     </svg>
   )
 
@@ -41,27 +41,27 @@ function AvatarSVG({ k, size = 72 }: { k: ProfileKey; size?: number }) {
     <svg width={s} height={s} viewBox="0 0 72 72" fill="none">
       <defs>
         <radialGradient id="grad-dev" cx="38%" cy="32%" r="68%">
-          <stop offset="0%" stopColor="#6B7280"/>
-          <stop offset="100%" stopColor="#111827"/>
+          <stop offset="0%" stopColor="#6B7280" />
+          <stop offset="100%" stopColor="#111827" />
         </radialGradient>
       </defs>
-      <rect width="72" height="72" rx="10" fill="url(#grad-dev)"/>
+      <rect width="72" height="72" rx="10" fill="url(#grad-dev)" />
       {/* Head */}
-      <circle cx="36" cy="28" r="14" fill="#D1D5DB"/>
+      <circle cx="36" cy="28" r="14" fill="#D1D5DB" />
       {/* Glasses */}
-      <rect x="25.5" y="21" width="8.5" height="6.5" rx="3" stroke="#374151" strokeWidth="1.5" fill="rgba(55,65,81,0.25)"/>
-      <rect x="38" y="21" width="8.5" height="6.5" rx="3" stroke="#374151" strokeWidth="1.5" fill="rgba(55,65,81,0.25)"/>
-      <line x1="34" y1="24.2" x2="38" y2="24.2" stroke="#374151" strokeWidth="1.5"/>
-      <line x1="18" y1="24.2" x2="25.5" y2="24.2" stroke="#374151" strokeWidth="1.2"/>
-      <line x1="46.5" y1="24.2" x2="54" y2="24.2" stroke="#374151" strokeWidth="1.2"/>
+      <rect x="25.5" y="21" width="8.5" height="6.5" rx="3" stroke="#374151" strokeWidth="1.5" fill="rgba(55,65,81,0.25)" />
+      <rect x="38" y="21" width="8.5" height="6.5" rx="3" stroke="#374151" strokeWidth="1.5" fill="rgba(55,65,81,0.25)" />
+      <line x1="34" y1="24.2" x2="38" y2="24.2" stroke="#374151" strokeWidth="1.5" />
+      <line x1="18" y1="24.2" x2="25.5" y2="24.2" stroke="#374151" strokeWidth="1.2" />
+      <line x1="46.5" y1="24.2" x2="54" y2="24.2" stroke="#374151" strokeWidth="1.2" />
       {/* Eyes */}
-      <circle cx="29.7" cy="24.2" r="1.8" fill="#1F2937"/>
-      <circle cx="42.3" cy="24.2" r="1.8" fill="#1F2937"/>
+      <circle cx="29.7" cy="24.2" r="1.8" fill="#1F2937" />
+      <circle cx="42.3" cy="24.2" r="1.8" fill="#1F2937" />
       {/* Smile */}
-      <path d="M30 32 Q36 36.5 42 32" stroke="#374151" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+      <path d="M30 32 Q36 36.5 42 32" stroke="#374151" strokeWidth="1.8" fill="none" strokeLinecap="round" />
       {/* Hoodie */}
-      <path d="M18 62 Q22 47 36 45 Q50 47 54 62 Z" fill="#D1D5DB"/>
-      <path d="M36 45 L33.5 49 Q36 52.5 38.5 49 Z" fill="#9CA3AF"/>
+      <path d="M18 62 Q22 47 36 45 Q50 47 54 62 Z" fill="#D1D5DB" />
+      <path d="M36 45 L33.5 49 Q36 52.5 38.5 49 Z" fill="#9CA3AF" />
       {/* Code on chest */}
       <text x="26.5" y="57" fontSize="8.5" fill="#374151" fontFamily="monospace" fontWeight="700">{"</>"}</text>
     </svg>
@@ -71,27 +71,27 @@ function AvatarSVG({ k, size = 72 }: { k: ProfileKey; size?: number }) {
     <svg width={s} height={s} viewBox="0 0 72 72" fill="none">
       <defs>
         <radialGradient id="grad-col" cx="38%" cy="32%" r="68%">
-          <stop offset="0%" stopColor="#F87171"/>
-          <stop offset="100%" stopColor="#991B1B"/>
+          <stop offset="0%" stopColor="#F87171" />
+          <stop offset="100%" stopColor="#991B1B" />
         </radialGradient>
       </defs>
-      <rect width="72" height="72" rx="10" fill="url(#grad-col)"/>
+      <rect width="72" height="72" rx="10" fill="url(#grad-col)" />
       {/* Head */}
-      <circle cx="36" cy="28" r="14" fill="#FECACA"/>
+      <circle cx="36" cy="28" r="14" fill="#FECACA" />
       {/* Eyes */}
-      <circle cx="30" cy="25" r="3.5" fill="#7F1D1D"/>
-      <circle cx="42" cy="25" r="3.5" fill="#7F1D1D"/>
-      <circle cx="31" cy="24" r="1.3" fill="white"/>
-      <circle cx="43" cy="24" r="1.3" fill="white"/>
+      <circle cx="30" cy="25" r="3.5" fill="#7F1D1D" />
+      <circle cx="42" cy="25" r="3.5" fill="#7F1D1D" />
+      <circle cx="31" cy="24" r="1.3" fill="white" />
+      <circle cx="43" cy="24" r="1.3" fill="white" />
       {/* Blush */}
-      <ellipse cx="24" cy="30.5" rx="4.5" ry="2.5" fill="#FDA4AF" opacity="0.7"/>
-      <ellipse cx="48" cy="30.5" rx="4.5" ry="2.5" fill="#FDA4AF" opacity="0.7"/>
+      <ellipse cx="24" cy="30.5" rx="4.5" ry="2.5" fill="#FDA4AF" opacity="0.7" />
+      <ellipse cx="48" cy="30.5" rx="4.5" ry="2.5" fill="#FDA4AF" opacity="0.7" />
       {/* Big smile */}
-      <path d="M27 32 Q36 40 45 32" stroke="#7F1D1D" strokeWidth="2" fill="none" strokeLinecap="round"/>
+      <path d="M27 32 Q36 40 45 32" stroke="#7F1D1D" strokeWidth="2" fill="none" strokeLinecap="round" />
       {/* Shoulders */}
-      <path d="M19 62 Q23 47 36 45 Q49 47 53 62 Z" fill="#FECACA"/>
+      <path d="M19 62 Q23 47 36 45 Q49 47 53 62 Z" fill="#FECACA" />
       {/* Star */}
-      <path d="M36 50 L37.4 53.8 L41.4 53.8 L38.3 56.1 L39.6 59.9 L36 57.6 L32.4 59.9 L33.7 56.1 L30.6 53.8 L34.6 53.8 Z" fill="#F87171"/>
+      <path d="M36 50 L37.4 53.8 L41.4 53.8 L38.3 56.1 L39.6 59.9 L36 57.6 L32.4 59.9 L33.7 56.1 L30.6 53.8 L34.6 53.8 Z" fill="#F87171" />
     </svg>
   )
 
@@ -100,35 +100,89 @@ function AvatarSVG({ k, size = 72 }: { k: ProfileKey; size?: number }) {
     <svg width={s} height={s} viewBox="0 0 72 72" fill="none">
       <defs>
         <radialGradient id="grad-exp" cx="38%" cy="32%" r="68%">
-          <stop offset="0%" stopColor="#FCD34D"/>
-          <stop offset="100%" stopColor="#78350F"/>
+          <stop offset="0%" stopColor="#FCD34D" />
+          <stop offset="100%" stopColor="#78350F" />
         </radialGradient>
       </defs>
-      <rect width="72" height="72" rx="10" fill="url(#grad-exp)"/>
+      <rect width="72" height="72" rx="10" fill="url(#grad-exp)" />
       {/* Hat */}
-      <path d="M16 20 Q36 10 56 20 L54 24 Q36 16 18 24 Z" fill="#92400E"/>
-      <rect x="23" y="17" width="26" height="9" rx="3" fill="#B45309"/>
-      <rect x="21" y="23.5" width="30" height="3" rx="1.5" fill="#78350F"/>
+      <path d="M16 20 Q36 10 56 20 L54 24 Q36 16 18 24 Z" fill="#92400E" />
+      <rect x="23" y="17" width="26" height="9" rx="3" fill="#B45309" />
+      <rect x="21" y="23.5" width="30" height="3" rx="1.5" fill="#78350F" />
       {/* Head */}
-      <circle cx="36" cy="34" r="13" fill="#FEF3C7"/>
+      <circle cx="36" cy="34" r="13" fill="#FEF3C7" />
       {/* Wide curious eyes */}
-      <circle cx="30" cy="31" r="4" fill="#78350F"/>
-      <circle cx="42" cy="31" r="4" fill="#78350F"/>
-      <circle cx="31" cy="30" r="1.5" fill="white"/>
-      <circle cx="43" cy="30" r="1.5" fill="white"/>
+      <circle cx="30" cy="31" r="4" fill="#78350F" />
+      <circle cx="42" cy="31" r="4" fill="#78350F" />
+      <circle cx="31" cy="30" r="1.5" fill="white" />
+      <circle cx="43" cy="30" r="1.5" fill="white" />
       {/* Raised brows */}
-      <path d="M26 25.5 Q30 23.5 34 25.5" stroke="#78350F" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-      <path d="M38 25.5 Q42 23.5 46 25.5" stroke="#78350F" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+      <path d="M26 25.5 Q30 23.5 34 25.5" stroke="#78350F" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <path d="M38 25.5 Q42 23.5 46 25.5" stroke="#78350F" strokeWidth="1.5" fill="none" strokeLinecap="round" />
       {/* Smile */}
-      <path d="M29 37.5 Q36 44 43 37.5" stroke="#78350F" strokeWidth="2" fill="none" strokeLinecap="round"/>
+      <path d="M29 37.5 Q36 44 43 37.5" stroke="#78350F" strokeWidth="2" fill="none" strokeLinecap="round" />
       {/* Vest/body */}
-      <path d="M20 62 Q24 48 36 46 Q48 48 52 62 Z" fill="#FEF3C7"/>
+      <path d="M20 62 Q24 48 36 46 Q48 48 52 62 Z" fill="#FEF3C7" />
       {/* Compass */}
-      <circle cx="36" cy="55.5" r="4.5" stroke="#B45309" strokeWidth="1.2" fill="none"/>
-      <path d="M36 51 L36.6 55.5 L36 60" stroke="#E50914" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M31.5 55.5 L36 56.2 L40.5 55.5" stroke="#78350F" strokeWidth="1.2" strokeLinecap="round"/>
+      <circle cx="36" cy="55.5" r="4.5" stroke="#B45309" strokeWidth="1.2" fill="none" />
+      <path d="M36 51 L36.6 55.5 L36 60" stroke="#E50914" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M31.5 55.5 L36 56.2 L40.5 55.5" stroke="#78350F" strokeWidth="1.2" strokeLinecap="round" />
     </svg>
   )
+}
+
+// ─── Skill Card Logos ─────────────────────────────────────────────────────────
+// White/semi-transparent so they read on any gradient background (the Netflix
+// UI is always dark, so these never need to adapt to a light system theme).
+
+function ReactAtomLogo() {
+  return (
+    <svg viewBox="-12 -10.5 24 21" width="54" height="54" fill="none">
+      <circle r="2.2" fill="rgba(255,255,255,0.95)" />
+      <g stroke="rgba(255,255,255,0.88)" strokeWidth="1.1" fill="none">
+        <ellipse rx="11" ry="4.2" />
+        <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+        <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+      </g>
+    </svg>
+  )
+}
+
+function TypeScriptBadgeLogo() {
+  return (
+    <svg viewBox="0 0 56 56" width="54" height="54">
+      <rect width="56" height="56" rx="6" fill="rgba(255,255,255,0.18)" />
+      <text
+        x="28" y="41"
+        fontFamily='"Arial Black", Arial, sans-serif'
+        fontWeight="900"
+        fontSize="28"
+        fill="rgba(255,255,255,0.95)"
+        textAnchor="middle"
+      >TS</text>
+    </svg>
+  )
+}
+
+function GitBranchLogo() {
+  return (
+    <svg viewBox="0 0 64 72" width="48" height="54" fill="none">
+      {/* Three commit nodes */}
+      <circle cx="16" cy="12" r="7" stroke="rgba(255,255,255,0.9)" strokeWidth="4" />
+      <circle cx="16" cy="60" r="7" stroke="rgba(255,255,255,0.9)" strokeWidth="4" />
+      <circle cx="48" cy="24" r="7" stroke="rgba(255,255,255,0.9)" strokeWidth="4" />
+      {/* Main vertical line */}
+      <line x1="16" y1="19" x2="16" y2="53" stroke="rgba(255,255,255,0.9)" strokeWidth="4" strokeLinecap="round" />
+      {/* Branch curve — quarter-circle arc from main line to feature node */}
+      <path d="M 16 30 Q 16 24 41 24" stroke="rgba(255,255,255,0.9)" strokeWidth="4" strokeLinecap="round" fill="none" />
+    </svg>
+  )
+}
+
+const SKILL_LOGOS: Record<string, React.ReactNode> = {
+  frontend: <ReactAtomLogo />,
+  backend: <TypeScriptBadgeLogo />,
+  tool: <GitBranchLogo />,
 }
 
 // ─── Profile Selection Screen ──────────────────────────────────────────────────
@@ -148,7 +202,7 @@ function ProfilesScreen({
       <div className="flex items-center justify-between px-4 pt-4 pb-2">
         <button onClick={closeApp} className="p-1">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M15 19l-7-7 7-7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M15 19l-7-7 7-7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
         {/* Netflix wordmark */}
@@ -244,19 +298,29 @@ function ContinueWatchingRow({ items, onSelect }: { items: CardItem[]; onSelect:
 function TallCardsRow({ items, onSelect }: { items: CardItem[]; onSelect: (i: CardItem) => void }) {
   return (
     <div className="flex gap-2.5 overflow-x-auto no-scrollbar pl-4 pr-2">
-      {items.map((item) => (
-        <button
-          key={item.id}
-          className="shrink-0 rounded-lg overflow-hidden text-left"
-          style={{ width: 102, height: 136, background: item.gradient, flexShrink: 0 }}
-          onClick={() => onSelect(item)}
-        >
-          <div className="h-full p-3 flex flex-col justify-end bg-linear-to-t from-black/40 to-transparent">
-            <p className="text-white text-[11px] font-bold leading-tight">{item.title}</p>
-            <p className="text-white/50 text-[9px] mt-0.5 leading-tight">{item.subtitle.split(" · ")[0]}</p>
-          </div>
-        </button>
-      ))}
+      {items.map((item) => {
+        const logo = SKILL_LOGOS[item.id]
+        return (
+          <button
+            key={item.id}
+            className="shrink-0 rounded-lg overflow-hidden text-left"
+            style={{ width: 102, height: 136, background: item.gradient, flexShrink: 0 }}
+            onClick={() => onSelect(item)}
+          >
+            <div className="h-full p-3 flex flex-col bg-linear-to-t from-black/50 to-transparent">
+              {/* Logo — centred in the upper portion of the card */}
+              <div className="flex-1 flex items-center justify-center">
+                {logo ?? null}
+              </div>
+              {/* Title + category at the bottom */}
+              <div>
+                <p className="text-white text-[11px] font-bold leading-tight">{item.title}</p>
+                <p className="text-white/50 text-[9px] mt-0.5 leading-tight">{item.subtitle.split(" · ")[0]}</p>
+              </div>
+            </div>
+          </button>
+        )
+      })}
     </div>
   )
 }
@@ -298,7 +362,7 @@ const BOTTOM_TABS = [
     label: "Home",
     icon: (a: boolean) => (
       <svg width="21" height="21" viewBox="0 0 24 24">
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill={a ? "white" : "rgba(255,255,255,0.35)"}/>
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill={a ? "white" : "rgba(255,255,255,0.35)"} />
       </svg>
     ),
   },
@@ -307,7 +371,7 @@ const BOTTOM_TABS = [
     label: "Search",
     icon: (a: boolean) => (
       <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke={a ? "white" : "rgba(255,255,255,0.35)"} strokeWidth="2.2" strokeLinecap="round">
-        <circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/>
+        <circle cx="11" cy="11" r="7" /><path d="m21 21-4.35-4.35" />
       </svg>
     ),
   },
@@ -316,8 +380,8 @@ const BOTTOM_TABS = [
     label: "Projects",
     icon: (a: boolean) => (
       <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke={a ? "white" : "rgba(255,255,255,0.35)"} strokeWidth="2" strokeLinecap="round">
-        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
-        <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+        <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
       </svg>
     ),
   },
@@ -326,7 +390,7 @@ const BOTTOM_TABS = [
     label: "New & Hot",
     icon: (a: boolean) => (
       <svg width="21" height="21" viewBox="0 0 24 24" fill={a ? "white" : "rgba(255,255,255,0.35)"}>
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" />
       </svg>
     ),
   },
@@ -335,7 +399,7 @@ const BOTTOM_TABS = [
     label: "Downloads",
     icon: (a: boolean) => (
       <svg width="21" height="21" viewBox="0 0 24 24" fill={a ? "white" : "rgba(255,255,255,0.35)"}>
-        <path d="M12 16.5 7 11h3.5V4h3v7H17l-5 5.5zm-8 3.5v-2h16v2H4z"/>
+        <path d="M12 16.5 7 11h3.5V4h3v7H17l-5 5.5zm-8 3.5v-2h16v2H4z" />
       </svg>
     ),
   },
@@ -392,7 +456,7 @@ function DetailModal({
             className="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/55 flex items-center justify-center"
           >
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-              <path d="M18 6L6 18M6 6l12 12" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+              <path d="M18 6L6 18M6 6l12 12" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
             </svg>
           </button>
           {/* Title over image */}
@@ -438,26 +502,26 @@ function DetailModal({
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 bg-white text-black py-2.5 rounded font-bold text-[13px]"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="black"><path d="M5 3l14 9-14 9V3z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="black"><path d="M5 3l14 9-14 9V3z" /></svg>
                 {item.ctaLabel ?? "Play"}
               </a>
             ) : (
               <button className="flex-1 flex items-center justify-center gap-2 bg-white text-black py-2.5 rounded font-bold text-[13px]">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="black"><path d="M5 3l14 9-14 9V3z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="black"><path d="M5 3l14 9-14 9V3z" /></svg>
                 {item.ctaLabel ?? "Play"}
               </button>
             )}
             {/* Bookmark */}
             <button className="w-11 flex items-center justify-center bg-[#2a2a2a] rounded border border-white/10">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 21l-7-4-7 4V5a2 2 0 012-2h10a2 2 0 012 2z"/>
+                <path d="M19 21l-7-4-7 4V5a2 2 0 012-2h10a2 2 0 012 2z" />
               </svg>
             </button>
             {/* Like */}
             <button className="w-11 flex items-center justify-center bg-[#2a2a2a] rounded border border-white/10">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/>
-                <path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/>
+                <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z" />
+                <path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3" />
               </svg>
             </button>
           </div>
@@ -494,7 +558,7 @@ function BrowseScreen({
           <div className="flex items-center gap-2.5">
             <button onClick={closeApp} className="p-1">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-                <path d="M15 19l-7-7 7-7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 19l-7-7 7-7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <span
@@ -505,9 +569,9 @@ function BrowseScreen({
             </span>
           </div>
           <div className="flex items-center gap-3.5">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round">
-              <circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/>
-            </svg>
+            {/* <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round">
+              <circle cx="11" cy="11" r="7" /><path d="m21 21-4.35-4.35" />
+            </svg> */}
             {/* Profile avatar — tap to change profile */}
             <button onClick={onBack} className="rounded-lg overflow-hidden" style={{ width: 28, height: 28 }}>
               <AvatarSVG k={profile.key} size={28} />
@@ -552,11 +616,12 @@ function BrowseScreen({
             {/* CTA buttons */}
             <div className="flex items-center gap-2.5">
               <a
-                href={`mailto:${portfolioData.personal.email}`}
+                href={`/Nihir%20Shah%20Resume.pdf`}
                 className="flex-1 flex items-center justify-center gap-1.5 bg-white text-black py-2.5 rounded font-bold text-[13px]"
+                target="_blank"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="black"><path d="M5 3l14 9-14 9V3z"/></svg>
-                Play Resume
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="black"><path d="M5 3l14 9-14 9V3z" /></svg>
+                Resume
               </a>
               <button
                 className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded font-semibold text-[13px] text-white"
@@ -564,7 +629,7 @@ function BrowseScreen({
                 onClick={() => setSelectedItem(ABOUT_CARD)}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
                 </svg>
                 More Info
               </button>
@@ -578,8 +643,8 @@ function BrowseScreen({
             <div key={row.id}>
               <h3 className="text-white text-[14px] font-bold mb-2.5 px-4">{row.label}</h3>
               {row.variant === "continue" && <ContinueWatchingRow items={row.items} onSelect={setSelectedItem} />}
-              {row.variant === "tall"     && <TallCardsRow       items={row.items} onSelect={setSelectedItem} />}
-              {row.variant === "wide"     && <WideCardsRow       items={row.items} onSelect={setSelectedItem} />}
+              {row.variant === "tall" && <TallCardsRow items={row.items} onSelect={setSelectedItem} />}
+              {row.variant === "wide" && <WideCardsRow items={row.items} onSelect={setSelectedItem} />}
             </div>
           ))}
         </div>
@@ -620,14 +685,14 @@ function NetflixIntro({ onDone }: { onDone: () => void }) {
 
   // Per-phase style snapshot
   const phaseStyle: React.CSSProperties =
-    phase === 0 ? { transform: "scale(0.48)", opacity: 0,    filter: "drop-shadow(0 0 0px  rgba(229,9,20,0))"   } :
-    phase === 1 ? { transform: "scale(1)",    opacity: 1,    filter: "drop-shadow(0 0 28px rgba(229,9,20,0.6))" } :
-                  { transform: "scale(1.14)", opacity: 0,    filter: "drop-shadow(0 0 0px  rgba(229,9,20,0))"   }
+    phase === 0 ? { transform: "scale(0.48)", opacity: 0, filter: "drop-shadow(0 0 0px  rgba(229,9,20,0))" } :
+      phase === 1 ? { transform: "scale(1)", opacity: 1, filter: "drop-shadow(0 0 28px rgba(229,9,20,0.6))" } :
+        { transform: "scale(1.14)", opacity: 0, filter: "drop-shadow(0 0 0px  rgba(229,9,20,0))" }
 
   const transitionStyle: React.CSSProperties =
     phase === 0 ? { transition: "none" } :
-    phase === 1 ? { transition: "transform 560ms cubic-bezier(0.16,1,0.3,1), opacity 420ms ease-out, filter 640ms ease-out" } :
-                  { transition: "transform 380ms ease-in, opacity 320ms ease-in, filter 320ms ease-in" }
+      phase === 1 ? { transition: "transform 560ms cubic-bezier(0.16,1,0.3,1), opacity 420ms ease-out, filter 640ms ease-out" } :
+        { transition: "transform 380ms ease-in, opacity 320ms ease-in, filter 320ms ease-in" }
 
   return (
     <div className="w-full h-full bg-black flex items-center justify-center">
@@ -666,7 +731,7 @@ function NetflixIntro({ onDone }: { onDone: () => void }) {
 
 export default function NetflixApp() {
   const { closeApp } = useAppNavigation()
-  const [screen, setScreen]   = useState<"intro" | "profiles" | "browse">("intro")
+  const [screen, setScreen] = useState<"intro" | "profiles" | "browse">("intro")
   const [profile, setProfile] = useState<Profile | null>(null)
 
   if (screen === "intro") {

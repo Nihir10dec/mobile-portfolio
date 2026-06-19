@@ -7,6 +7,17 @@ import { useState, useEffect } from "react"
 import { playlists, recentTracks } from "./spotify-app.data"
 import { useNowPlaying } from "@/hooks/use-now-playing"
 
+type Time = 'Morning' | 'Afternoon' | 'Evening' | 'Night';
+
+function getTimeBasedGreeting(hour: number): Time {
+  if (hour >= 6 && hour < 12) return "Morning"
+  if (hour >= 12 && hour < 18) return "Afternoon"
+  if (hour >= 18 && hour < 24) return "Evening"
+  return "Night"
+}
+
+const Message = `Good ${getTimeBasedGreeting(new Date().getHours())}`
+
 export default function SpotifyApp() {
   const { closeApp } = useAppNavigation()
   const { theme } = useDevice()
@@ -53,7 +64,7 @@ export default function SpotifyApp() {
               <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
-          <h1 className="text-[22px] font-bold" style={{ color: text }}>Good afternoon</h1>
+          <h1 className="text-[22px] font-bold" style={{ color: text }}>{Message}</h1>
         </div>
         <div className="flex gap-4 items-center">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={text} strokeWidth="2"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
@@ -96,8 +107,12 @@ export default function SpotifyApp() {
           {recentTracks.map((trk, i) => (
             <button key={i} className="w-full flex items-center justify-between text-left group">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 shrink-0" style={{ background: isDark ? "#282828" : "#e0e0e0" }}>
-                  <div className="w-full h-full opacity-50 flex items-center justify-center">🎵</div>
+                <div className="w-12 h-12 shrink-0 overflow-hidden rounded-sm" style={{ background: isDark ? "#282828" : "#e0e0e0" }}>
+                  {trk.image ? (
+                    <img src={trk.image} alt={trk.album} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full opacity-50 flex items-center justify-center">🎵</div>
+                  )}
                 </div>
                 <div>
                   <h3 className="text-[15px] font-semibold truncate" style={{ color: i === 0 && isPlaying ? green : text }}>{trk.title}</h3>

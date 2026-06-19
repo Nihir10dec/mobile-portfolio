@@ -5,7 +5,7 @@ export const portfolioData = {
     initial: "N",
     title: "Senior Software Engineer",
     location: "Mumbai, India",
-    email: "Hello@Nihir.dev",
+    email: "nihir10dec@gmail.com",
     about: "I'm Nihir Shah — a software engineer who believes the best code is the code that feels invisible to its users. Based in Mumbai, India, I build digital products that sit at the intersection of engineering excellence and human-centered design.",
     phone: "+91 98765 43210", // Placeholder
   },
@@ -64,7 +64,7 @@ export const portfolioData = {
       description: "A fun guessing game like Wordle but with different categories and hints.",
       color: "linear-gradient(135deg, #6aaa64 0%, #538d4e 100%)",
       tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-      url: "https://github.com/nihir10dec"
+      url: "https://custom-wordle-tau.vercel.app/"
     },
     {
       id: "old-portfolio",
@@ -73,7 +73,7 @@ export const portfolioData = {
       description: "My first developer portfolio, hand-crafted from scratch.",
       color: "linear-gradient(135deg, #434343 0%, #000000 100%)",
       tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://github.com/nihir10dec"
+      url: "https://nihir-shah.netlify.app/"
     },
     {
       id: "azure-telegram-bot",
@@ -100,7 +100,7 @@ export const portfolioData = {
       description: "Real-time rates of the top 100 cryptocurrencies.",
       color: "linear-gradient(135deg, #F7931A 0%, #b56a10 100%)",
       tags: ["Vue.js", "Vuex", "Vuetify"],
-      url: "https://github.com/nihir10dec"
+      url: "https://github.com/Nihir10dec/top100crypto"
     },
     {
       id: "time-for-quiz",
@@ -109,7 +109,7 @@ export const portfolioData = {
       description: "A quiz website with a variety of questions and difficulty levels.",
       color: "linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)",
       tags: ["Vue.js", "Bootstrap", "OpenTDB API"],
-      url: "https://github.com/nihir10dec"
+      url: "https://github.com/Nihir10dec/quiz/"
     }
   ],
   articles: [
@@ -120,7 +120,7 @@ export const portfolioData = {
       readTime: "2 min read",
       tags: ["React", "AWS Cognito"],
       image: "linear-gradient(135deg, #FF9900 0%, #232F3E 100%)",
-      url: "https://blogs.demandhelm.com/enhancing-react-projects-with-aws-cognito-interation/"
+      url: "https://medium.com/@demandapi/enhancing-react-projects-with-aws-cognito-integration-ad2debb2d16d"
     },
     {
       title: "AWS Cognito User Pool Creation: Step-by-Step Guide",
@@ -129,7 +129,7 @@ export const portfolioData = {
       readTime: "4 min read",
       tags: ["AWS Cognito", "Security"],
       image: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-      url: "https://blogs.demandhelm.com/aws-cognito-user-pool-creation/"
+      url: "https://medium.com/@demandapi/aws-cognito-user-pool-creation-step-by-step-guide-a1a63de910d4"
     },
     {
       title: "AWS Cognito — Advantages, Pricing and Insights",
@@ -138,7 +138,7 @@ export const portfolioData = {
       readTime: "4 min read",
       tags: ["AWS", "Authentication"],
       image: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-      url: "https://blogs.demandhelm.com/aws-cognito-advantages-pricing-insights/"
+      url: "https://medium.com/@demandapi/aws-cognito-advantages-pricing-and-insights-3276d34783d0"
     },
     {
       title: "Microsoft Clarity: A Game Changer for UX Research",
@@ -147,7 +147,7 @@ export const portfolioData = {
       readTime: "7 min read",
       tags: ["Analytics", "UX"],
       image: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
-      url: "https://blogs.demandhelm.com/microsoft-clarity/"
+      url: "https://medium.com/@demandapi/microsoft-clarity-a-game-changer-for-website-optimization-ux-enhancement-d48a587bce99"
     },
     {
       title: "Indian \"Lok Sabha\" Candidate Analysis",

@@ -66,12 +66,14 @@ export default function LinkedInApp() {
         </div>
         {/* Connect button */}
         <div className="flex justify-end px-4 pt-2">
-          <button
-            className="px-5 py-1.5 rounded-full text-[13px] font-semibold text-white"
+          <a
+            className="px-5 py-2 rounded-full text-[15px] font-semibold text-white"
             style={{ background: linkedinBlue }}
+            href={`https://${portfolioData.social.linkedin}`}
+            target="_blank"
           >
             Connect
-          </button>
+          </a>
         </div>
 
         {/* Profile info */}

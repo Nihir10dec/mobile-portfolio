@@ -9,6 +9,8 @@ import type {
   CareerTab,
 } from "./instagram-app.types"
 import { portfolioData } from "@/data/portfolio"
+import { AwsLogoSVG, AzureLogoSVG, BackendLogoSVG, ClarityLogoSVG, CognitoLogoSVG, GitBranchLogoSVG, ReactLogoSVG, WordleLogoSVG } from "./instagram-logos"
+import { EarthIcon, LandmarkIcon, Bitcoin, PuzzleIcon, MonitorCogIcon } from "lucide-react"
 
 // ─── Feed data (timeline tab) ──────────────────────────────────────────────
 
@@ -57,7 +59,7 @@ export const profileData: ProfileData = {
   bio: "Full-stack developer✨\nReact, Next.js, Node.js 🌐",
   companies: 3,
   education: 2,
-  projects: 6,
+  projects: 7,
   instagramUrl: `https://instagram.com/${portfolioData.social.instagram.replace(/^@/, "")}`,
   email: portfolioData.personal.email,
 }
@@ -106,13 +108,17 @@ export const projects: ProjectItem[] = [
     title: "Custom Wordle",
     description: "A fun guessing game like Wordle but with different categories and hints.",
     tags: ["Next.js", "React", "Tailwind CSS"],
+    url: "https://custom-wordle-tau.vercel.app/",
+    logo: WordleLogoSVG,
   },
   {
     id: 2,
-    initials: "PV",
+    initials: "NS",
     title: "Portfolio v1",
     description: "My first developer portfolio, hand-crafted from scratch.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["NextJS", "Tailwind CSS", "Aceternity ui"],
+    url: "https://nihir-shah.netlify.app/",
+    logo: EarthIcon,
   },
   {
     id: 3,
@@ -120,6 +126,7 @@ export const projects: ProjectItem[] = [
     title: "Azure VM Telegram Bot",
     description: "Control and manage Azure VM instances remotely with a Python-powered Telegram bot.",
     tags: ["Azure", "Python", "Telegram"],
+    logo: AzureLogoSVG
   },
   {
     id: 4,
@@ -127,6 +134,7 @@ export const projects: ProjectItem[] = [
     title: "Lok Sabha 2019 Candidate Analysis",
     description: "Exploratory analysis on the personal details of candidates who contested the 2019 Lok Sabha elections.",
     tags: ["Python", "Pandas", "Seaborn"],
+    logo: LandmarkIcon,
   },
   {
     id: 5,
@@ -134,14 +142,26 @@ export const projects: ProjectItem[] = [
     title: "Top 100 Crypto-Currency",
     description: "Real-time rates of the top 100 cryptocurrencies.",
     tags: ["Vue.js", "Vuex", "Vuetify"],
+    logo: Bitcoin,
   },
   {
     id: 6,
-    initials: "TQ",
+    initials: "QUIZ",
     title: "Time For Quiz",
     description: "A quiz website with a variety of questions and difficulty levels.",
     tags: ["Vue.js", "Bootstrap", "OpenTDB API"],
+    logo: PuzzleIcon
   },
+  {
+    id: 2,
+    initials: "PV",
+    title: "Portfolio v0",
+    description: "My first developer portfolio, hand-crafted from scratch.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    url: "https://nihirshah.netlify.app/",
+    logo: MonitorCogIcon
+  },
+
 ]
 
 export const blogs: BlogItem[] = [
@@ -151,6 +171,7 @@ export const blogs: BlogItem[] = [
     title: "Enhancing React Projects with AWS Cognito",
     description: "A practical walkthrough of integrating AWS Cognito into a React project for authentication.",
     readTime: "2 min read",
+    url: "https://medium.com/@demandapi/enhancing-react-projects-with-aws-cognito-integration-ad2debb2d16d"
   },
   {
     id: 2,
@@ -158,6 +179,8 @@ export const blogs: BlogItem[] = [
     title: "AWS Cognito User Pool Creation: Step-by-Step Guide",
     description: "A step-by-step guide to creating and configuring a User Pool in AWS Cognito.",
     readTime: "4 min read",
+    url: "https://medium.com/@demandapi/aws-cognito-user-pool-creation-step-by-step-guide-a1a63de910d4",
+    logo: AwsLogoSVG
   },
   {
     id: 3,
@@ -165,6 +188,8 @@ export const blogs: BlogItem[] = [
     title: "AWS Cognito — Advantages, Pricing and Insights",
     description: "An overview of Amazon Cognito, the serverless authentication service, its pricing and advantages.",
     readTime: "4 min read",
+    url: "https://medium.com/@demandapi/aws-cognito-advantages-pricing-and-insights-3276d34783d0",
+    logo: CognitoLogoSVG,
   },
   {
     id: 4,
@@ -172,6 +197,8 @@ export const blogs: BlogItem[] = [
     title: "Microsoft Clarity: A Game Changer for UX Research",
     description: "How Microsoft Clarity, a free analytics tool, transforms UX research and customer experience.",
     readTime: "7 min read",
+    url: "https://medium.com/@demandapi/microsoft-clarity-a-game-changer-for-website-optimization-ux-enhancement-d48a587bce99",
+    logo: ClarityLogoSVG
   },
   {
     id: 5,
@@ -179,6 +206,8 @@ export const blogs: BlogItem[] = [
     title: "Indian \"Lok Sabha\" Candidate Analysis",
     description: "A data-driven look at the personal details of the candidates in the 2019 Lok Sabha elections.",
     readTime: "10 min read",
+    url: "https://medium.com/@nihir_shah/lok-sabha-2019-candidate-analysis-e56f1f37ac76",
+    logo: LandmarkIcon,
   },
   {
     id: 6,
@@ -186,6 +215,8 @@ export const blogs: BlogItem[] = [
     title: "Managing Azure Instances With Telegram Bot Using Python",
     description: "Send a command to your Telegram bot to control your Azure instances remotely with Python.",
     readTime: "8 min read",
+    url: "https://medium.com/@nihir_shah/managing-azure-instances-with-telegram-bot-using-python-part-2-f9a19923132d",
+    logo: AzureLogoSVG,
   },
 ]
 
@@ -195,18 +226,21 @@ export const skills: SkillItem[] = [
     initials: "FE",
     category: "Frontend",
     items: ["React", "Next.js", "JavaScript", "TypeScript", "HTML/CSS", "Tailwind CSS", "Nginx"],
+    logo: ReactLogoSVG,
   },
   {
     id: 2,
     initials: "BE",
     category: "Backend",
     items: ["Node.js", "Express", "MySQL", "REST API", "GraphQL"],
+    logo: BackendLogoSVG
   },
   {
     id: 3,
     initials: "TL",
     category: "Tools",
     items: ["Git", "AWS", "Vercel", "Figma", "VS Code"],
+    logo: GitBranchLogoSVG
   },
 ]
 

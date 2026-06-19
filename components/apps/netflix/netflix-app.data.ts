@@ -54,6 +54,15 @@ export const EXPERIENCE: CardItem[] = [
     ctaLabel: "View on LinkedIn",
     ctaUrl: `https://${portfolioData.social.linkedin}`,
   },
+  {
+    id: "infy",
+    title: "Infosys",
+    subtitle: "Systems Engineer · June 2018 - February 2020",
+    body: portfolioData.experience[2].description,
+    gradient: "linear-gradient(135deg, #0078D4 0%, #005a9e 100%)",
+    ctaLabel: "View on LinkedIn",
+    ctaUrl: `https://${portfolioData.social.linkedin}`,
+  },
 ]
 
 export const SKILLS: CardItem[] = [
@@ -74,20 +83,12 @@ export const SKILLS: CardItem[] = [
     gradient: "linear-gradient(135deg, #064E3B 0%, #059669 100%)",
   },
   {
-    id: "data",
-    title: "Data & ML",
-    subtitle: "PostgreSQL · Redis · TensorFlow",
+    id: "tool",
+    title: "Tools & Devops",
+    subtitle: "Git · Redis · AWS  · CI/CD",
     body: "From relational schemas to vector embeddings. Built ML pipelines processing millions of events daily.",
-    tags: ["PostgreSQL", "Redis", "TensorFlow", "SQL"],
+    tags: ["Git", "AWS", "Vercel", "Figma", "VS Code", "CI/CD"],
     gradient: "linear-gradient(135deg, #4C1D95 0%, #7C3AED 100%)",
-  },
-  {
-    id: "devops",
-    title: "DevOps & Cloud",
-    subtitle: "AWS · Docker · CI/CD",
-    body: "Infrastructure as code, container orchestration, and automated deployment pipelines on AWS.",
-    tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
-    gradient: "linear-gradient(135deg, #78350F 0%, #D97706 100%)",
   },
 ]
 

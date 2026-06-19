@@ -46,6 +46,10 @@ export interface ProjectItem {
   title: string
   description: string
   tags: string[]
+  url?: string;
+  logo?: React.ComponentType<{
+    size?: number;
+  }>;
 }
 
 export interface BlogItem {
@@ -54,6 +58,10 @@ export interface BlogItem {
   title: string
   description: string
   readTime: string
+  url: string
+  logo?: React.ComponentType<{
+    size?: number;
+  }>;
 }
 
 export interface SkillItem {
@@ -61,6 +69,9 @@ export interface SkillItem {
   initials: string
   category: string
   items: string[]
+  logo?: React.ComponentType<{
+    size?: number;
+  }>;
 }
 
 export type Tab = "feed" | "work" | "education" | "projects" | "blogs" | "skills"
