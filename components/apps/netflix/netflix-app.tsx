@@ -280,6 +280,11 @@ function ContinueWatchingRow({ items, onSelect }: { items: CardItem[]; onSelect:
             }}
           >
             <div className="absolute inset-0 bg-linear-to-t from-black/75 to-transparent" />
+            {item.logo && (
+              <div className="absolute inset-0 flex items-center justify-center pb-5 text-white/50">
+                <item.logo size={26} />
+              </div>
+            )}
             <div className="absolute bottom-0 left-0 right-0 p-2">
               <p className="text-white text-[10px] font-semibold leading-tight drop-shadow-sm">{item.title}</p>
             </div>
@@ -342,7 +347,10 @@ function WideCardsRow({ items, onSelect }: { items: CardItem[]; onSelect: (i: Ca
           onClick={() => onSelect(item)}
         >
           <div className="h-full p-3 flex flex-col justify-between bg-linear-to-r from-black/70 via-black/30 to-transparent">
-            <p className="text-white/50 text-[8.5px] font-semibold uppercase tracking-wider">{item.subtitle}</p>
+            <div className="flex items-start justify-between">
+              <p className="text-white/50 text-[8.5px] font-semibold uppercase tracking-wider">{item.subtitle}</p>
+              {item.logo && <div className="text-white/45 shrink-0"><item.logo size={16} /></div>}
+            </div>
             <div>
               <p className="text-white text-[13px] font-bold leading-tight">{item.title}</p>
               <p className="text-white/40 text-[9px] mt-0.5 line-clamp-1">{item.body}</p>

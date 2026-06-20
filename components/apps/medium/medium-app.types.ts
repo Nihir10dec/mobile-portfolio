@@ -1,3 +1,5 @@
+import type React from "react"
+
 export interface Article {
   author: string
   in: string
@@ -8,6 +10,7 @@ export interface Article {
   tags: string[]
   image: string
   url: string
+  logo?: React.ComponentType<{ size?: number }>
 }
 
 export type MediumTabs = string[]

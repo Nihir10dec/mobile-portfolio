@@ -76,7 +76,9 @@ export default function MediumApp() {
                     {article.desc}
                   </p>
                 </div>
-                <div className="w-[80px] h-[80px] shrink-0 bg-gray-200 mt-1" style={{ background: article.image }} />
+                <div className="w-[80px] h-[80px] shrink-0 mt-1 relative flex items-center justify-center text-white/70" style={{ background: article.image }}>
+                  {article.logo && <article.logo size={30} />}
+                </div>
               </div>
 
               {/* Footer metadata */}

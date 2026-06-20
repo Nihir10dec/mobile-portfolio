@@ -255,7 +255,7 @@ export default function InstagramApp() {
               className={`aspect-square bg-linear-to-br ${cfg.gridFrom} ${cfg.gridTo} flex flex-col items-center justify-center gap-2 p-2 active:opacity-75 transition-opacity`}
             >
               <div
-                className={`w-11 h-11 rounded-xl ${cfg.accentBg} flex items-center justify-center shadow-lg`}
+                className={`w-11 h-11 rounded-xl ${cfg.accentBg} flex items-center justify-center shadow-lg text-white`}
               >
                 {Logo ? <Logo />
                   : <span className="text-white text-sm font-bold">{item.initials}</span>}
@@ -333,7 +333,7 @@ export default function InstagramApp() {
           <div className={`absolute top-0 right-0 w-40 h-40 rounded-full ${cfg.accentBg} opacity-10 blur-3xl`} />
           <div className={`absolute bottom-0 left-0 w-28 h-28 rounded-full ${cfg.accentBg} opacity-10 blur-2xl`} />
           <div className="relative flex flex-col items-center gap-4 px-8 text-center">
-            <div className={`w-24 h-24 rounded-2xl ${cfg.accentBg} flex items-center justify-center shadow-2xl`}>
+            <div className={`w-24 h-24 rounded-2xl ${cfg.accentBg} flex items-center justify-center shadow-2xl text-white`}>
               {Logo ? <Logo size={40} />
                 : <span className="text-white text-3xl font-bold tracking-tight">{post.initials}</span>}
             </div>

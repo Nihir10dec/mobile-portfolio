@@ -1,5 +1,23 @@
 import { portfolioData } from "@/data/portfolio"
 import type { CardItem, Profile, ProfileKey, Row } from "./netflix-app.types"
+import {
+  PuzzleIcon, EarthIcon, BotIcon, LandmarkIcon, Bitcoin, BookOpenIcon,
+  TrendingUpIcon, RocketIcon, Building2Icon,
+  CloudIcon, LockIcon, ShieldIcon, EyeIcon,
+} from "lucide-react"
+
+const PROJECT_LOGO_MAP: Record<string, React.ComponentType<{ size?: number }>> = {
+  "custom-wordle": PuzzleIcon,
+  "old-portfolio": EarthIcon,
+  "azure-telegram-bot": BotIcon,
+  "loksabha-analysis": LandmarkIcon,
+  "top-crypto": Bitcoin,
+  "time-for-quiz": BookOpenIcon,
+}
+
+const ARTICLE_LOGOS: React.ComponentType<{ size?: number }>[] = [
+  CloudIcon, LockIcon, ShieldIcon, EyeIcon, LandmarkIcon, BotIcon,
+]
 
 // ─── Profile Config ────────────────────────────────────────────────────────────
 
@@ -33,6 +51,7 @@ export const PROJECTS: CardItem[] = portfolioData.projects.map((p, i) => ({
   gradient: PROJECT_GRADIENTS[i % PROJECT_GRADIENTS.length],
   ctaLabel: "View Project",
   ctaUrl: p.url,
+  logo: PROJECT_LOGO_MAP[p.id],
 }))
 
 export const EXPERIENCE: CardItem[] = [
@@ -44,6 +63,7 @@ export const EXPERIENCE: CardItem[] = [
     gradient: "linear-gradient(135deg, #A20A22 0%, #E31837 100%)",
     ctaLabel: "View on LinkedIn",
     ctaUrl: `https://${portfolioData.social.linkedin}`,
+    logo: TrendingUpIcon,
   },
   {
     id: "startup",
@@ -53,6 +73,7 @@ export const EXPERIENCE: CardItem[] = [
     gradient: "linear-gradient(135deg, #1f4037 0%, #2d6a4f 100%)",
     ctaLabel: "View on LinkedIn",
     ctaUrl: `https://${portfolioData.social.linkedin}`,
+    logo: RocketIcon,
   },
   {
     id: "infy",
@@ -62,6 +83,7 @@ export const EXPERIENCE: CardItem[] = [
     gradient: "linear-gradient(135deg, #0078D4 0%, #005a9e 100%)",
     ctaLabel: "View on LinkedIn",
     ctaUrl: `https://${portfolioData.social.linkedin}`,
+    logo: Building2Icon,
   },
 ]
 
@@ -110,6 +132,7 @@ export const ARTICLES: CardItem[] = portfolioData.articles.map((a, i) => ({
   gradient: ARTICLE_GRADIENTS[i % ARTICLE_GRADIENTS.length],
   ctaLabel: "Read Article",
   ctaUrl: a.url,
+  logo: ARTICLE_LOGOS[i],
 }))
 
 export const ABOUT_CARD: CardItem = {

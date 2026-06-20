@@ -1,5 +1,6 @@
 import type { Article, MediumTabs } from "./medium-app.types"
 import { portfolioData } from "@/data/portfolio"
+import { CloudIcon, LockIcon, ShieldIcon, EyeIcon, LandmarkIcon, BotIcon } from "lucide-react"
 
 export const tabs: MediumTabs = ["Following", "Recommended", "React", "System Design", "JavaScript"]
 
@@ -13,7 +14,8 @@ export const articles: Article[] = [
     readTime: "2 min read",
     tags: ["React", "AWS Cognito"],
     image: "linear-gradient(135deg, #FF9900 0%, #232F3E 100%)",
-    url: "https://medium.com/@demandapi/enhancing-react-projects-with-aws-cognito-integration-ad2debb2d16d"
+    url: "https://medium.com/@demandapi/enhancing-react-projects-with-aws-cognito-integration-ad2debb2d16d",
+    logo: CloudIcon,
   },
   {
     author: portfolioData.personal.name,
@@ -24,7 +26,8 @@ export const articles: Article[] = [
     readTime: "4 min read",
     tags: ["AWS Cognito", "Security"],
     image: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    url: "https://medium.com/@demandapi/aws-cognito-user-pool-creation-step-by-step-guide-a1a63de910d4"
+    url: "https://medium.com/@demandapi/aws-cognito-user-pool-creation-step-by-step-guide-a1a63de910d4",
+    logo: LockIcon,
   },
   {
     author: portfolioData.personal.name,
@@ -35,7 +38,8 @@ export const articles: Article[] = [
     readTime: "4 min read",
     tags: ["AWS", "Authentication"],
     image: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    url: "https://medium.com/@demandapi/aws-cognito-advantages-pricing-and-insights-3276d34783d0"
+    url: "https://medium.com/@demandapi/aws-cognito-advantages-pricing-and-insights-3276d34783d0",
+    logo: ShieldIcon,
   },
   {
     author: portfolioData.personal.name,
@@ -46,7 +50,8 @@ export const articles: Article[] = [
     readTime: "7 min read",
     tags: ["Analytics", "UX"],
     image: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
-    url: "https://medium.com/@demandapi/microsoft-clarity-a-game-changer-for-website-optimization-ux-enhancement-d48a587bce99"
+    url: "https://medium.com/@demandapi/microsoft-clarity-a-game-changer-for-website-optimization-ux-enhancement-d48a587bce99",
+    logo: EyeIcon,
   },
   {
     author: portfolioData.personal.name,
@@ -57,7 +62,8 @@ export const articles: Article[] = [
     readTime: "10 min read",
     tags: ["Data Science", "Python"],
     image: "linear-gradient(135deg, #FF9933 0%, #138808 100%)",
-    url: "https://medium.com/@nihir_shah/lok-sabha-2019-candidate-analysis-e56f1f37ac76"
+    url: "https://medium.com/@nihir_shah/lok-sabha-2019-candidate-analysis-e56f1f37ac76",
+    logo: LandmarkIcon,
   },
   {
     author: portfolioData.personal.name,
@@ -68,6 +74,7 @@ export const articles: Article[] = [
     readTime: "8 min read",
     tags: ["Azure", "Python"],
     image: "linear-gradient(135deg, #0078D4 0%, #005a9e 100%)",
-    url: "https://medium.com/@nihir_shah/managing-azure-instances-with-telegram-bot-using-python-part-2-f9a19923132d"
+    url: "https://medium.com/@nihir_shah/managing-azure-instances-with-telegram-bot-using-python-part-2-f9a19923132d",
+    logo: BotIcon,
   }
 ]
