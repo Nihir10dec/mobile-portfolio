@@ -4,6 +4,7 @@ import { useAppNavigation } from "@/hooks/use-app-navigation"
 import { useDevice } from "@/hooks/use-device"
 import { portfolioData } from "@/data/portfolio"
 import { haptic } from "@/lib/haptics"
+import { playToggleClick } from "@/lib/audio"
 
 export default function SettingsApp() {
   const { closeApp } = useAppNavigation()
@@ -45,6 +46,7 @@ export default function SettingsApp() {
             aria-checked={active}
             onClick={() => {
               haptic(6)
+              playToggleClick()
               onChange(opt.value)
             }}
             className="px-3 py-1 rounded-[7px] text-[13px] font-medium transition-all"

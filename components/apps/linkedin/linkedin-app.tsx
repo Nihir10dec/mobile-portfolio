@@ -35,9 +35,9 @@ export default function LinkedInApp() {
           </svg>
         </div>
         <div className="flex items-center gap-3">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          {/* <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke={text} strokeWidth="2" strokeLinecap="round" />
-          </svg>
+          </svg> */}
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke={text} strokeWidth="2" strokeLinejoin="round" />
           </svg>

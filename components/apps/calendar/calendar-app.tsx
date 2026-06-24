@@ -34,11 +34,11 @@ function IOSCalendar() {
         </button>
         <span className="text-[20px] font-semibold" style={{ color: red }}>{monthName}</span>
         <div className="flex gap-4">
-          <button>
+          {/* <button>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={red} strokeWidth="2">
               <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-          </button>
+          </button> */}
           <button className="text-[28px] font-light leading-none" style={{ color: red, marginTop: "-2px" }}>+</button>
         </div>
       </div>
@@ -88,7 +88,7 @@ function IOSCalendar() {
             {selectedDay === todayDate
               ? dayName
               : new Date(today.getFullYear(), today.getMonth(), selectedDay)
-                  .toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}
+                .toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}
           </h2>
         </div>
 
@@ -174,11 +174,11 @@ function AndroidCalendar() {
         <span className="flex-1 text-[20px] font-normal" style={{ color: text }}>
           {today.toLocaleString("en-US", { month: "long", year: "numeric" })}
         </span>
-        <button className="w-9 h-9 flex items-center justify-center rounded-full">
+        {/* <button className="w-9 h-9 flex items-center justify-center rounded-full">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke={text} strokeWidth="2" strokeLinecap="round" />
           </svg>
-        </button>
+        </button> */}
         <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-[13px] text-white"
           style={{ background: blue }}>
           N

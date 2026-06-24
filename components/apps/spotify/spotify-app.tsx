@@ -6,6 +6,7 @@ import { portfolioData } from "@/data/portfolio"
 import { useState, useEffect } from "react"
 import { playlists, recentTracks } from "./spotify-app.data"
 import { useNowPlaying } from "@/hooks/use-now-playing"
+import { startAmbientLoop, stopAmbientLoop } from "@/lib/audio"
 
 type Time = 'Morning' | 'Afternoon' | 'Evening' | 'Night';
 
@@ -31,22 +32,36 @@ export default function SpotifyApp() {
   const green = "#1DB954"
 
   const [isPlaying, setIsPlaying] = useState<boolean>(true)
+  const [activeTrackIndex, setActiveTrackIndex] = useState(0)
+
+  const handleTrackClick = (i: number) => {
+    setActiveTrackIndex(i)
+    setIsPlaying(true)
+  }
+
+  // Ambient loop — starts/stops with playback.
+  useEffect(() => {
+    if (isPlaying) {
+      startAmbientLoop()
+      return () => stopAmbientLoop()
+    }
+  }, [isPlaying])
 
   // Publish playback state to the Dynamic Island live activity.
   useEffect(() => {
     if (isPlaying) {
       setNowPlaying({
-        track: "Building the Engine",
+        track: recentTracks[activeTrackIndex].title,
         artist: portfolioData.personal.name,
         artwork: "linear-gradient(135deg, #1f4037 0%, #99f2c8 100%)",
       })
     } else {
       clearNowPlaying()
     }
-  }, [isPlaying, setNowPlaying, clearNowPlaying])
+  }, [isPlaying, activeTrackIndex, setNowPlaying, clearNowPlaying])
 
-  // Stop the live activity when leaving the app.
-  useEffect(() => () => clearNowPlaying(), [clearNowPlaying])
+  // Stop the live activity and ambient loop when leaving the app.
+  useEffect(() => () => { clearNowPlaying(); stopAmbientLoop() }, [clearNowPlaying])
 
   return (
     <div className="w-full h-full flex flex-col relative overflow-hidden" style={{ background: bg }}>
@@ -105,7 +120,7 @@ export default function SpotifyApp() {
         {/* Tracklist */}
         <div className="px-4 space-y-4 mb-8">
           {recentTracks.map((trk, i) => (
-            <button key={i} className="w-full flex items-center justify-between text-left group">
+            <button key={i} className="w-full flex items-center justify-between text-left group" onClick={() => handleTrackClick(i)}>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 shrink-0 overflow-hidden rounded-sm" style={{ background: isDark ? "#282828" : "#e0e0e0" }}>
                   {trk.image ? (
@@ -115,7 +130,7 @@ export default function SpotifyApp() {
                   )}
                 </div>
                 <div>
-                  <h3 className="text-[15px] font-semibold truncate" style={{ color: i === 0 && isPlaying ? green : text }}>{trk.title}</h3>
+                  <h3 className="text-[15px] font-semibold truncate" style={{ color: i === activeTrackIndex && isPlaying ? green : text }}>{trk.title}</h3>
                   <p className="text-[13px] truncate" style={{ color: textMuted }}>{portfolioData.personal.name} • {trk.album}</p>
                 </div>
               </div>
@@ -146,7 +161,7 @@ export default function SpotifyApp() {
         <div className="flex items-center gap-3 w-3/4">
           <div className="w-10 h-10 rounded shadow-sm shrink-0" style={{ background: "linear-gradient(135deg, #1f4037 0%, #99f2c8 100%)" }} />
           <div className="min-w-0">
-            <h3 className="text-[13px] font-bold truncate" style={{ color: text }}>Building the Engine</h3>
+            <h3 className="text-[13px] font-bold truncate" style={{ color: text }}>{recentTracks[activeTrackIndex].title}</h3>
             <p className="text-[11px] truncate" style={{ color: textMuted }}>{portfolioData.personal.name}</p>
           </div>
         </div>

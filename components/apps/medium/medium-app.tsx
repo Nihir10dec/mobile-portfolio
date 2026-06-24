@@ -30,7 +30,7 @@ export default function MediumApp() {
           </svg>
         </div>
         <div className="flex gap-3 text-lg items-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={text} strokeWidth="2"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+          {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={text} strokeWidth="2"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg> */}
           <div className="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center font-sans font-bold text-white text-[12px]">
             NS
           </div>

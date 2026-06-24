@@ -2,6 +2,7 @@
 
 import { useAppNavigation } from "@/hooks/use-app-navigation"
 import { useDevice } from "@/hooks/use-device"
+import { playDTMF, startRingtone, stopRingtone, playHangup } from "@/lib/audio"
 import { type ReactNode, useEffect, useState } from "react"
 import type { Contact } from "./phone-app.types"
 import { contacts, dialPad, recents } from "./phone-app.data"
@@ -39,6 +40,7 @@ export default function PhoneApp() {
   }
 
   const hapticPress = (digit: string) => {
+    playDTMF(digit)
     if (number.length < 15) setNumber((prev) => prev + digit)
   }
 
@@ -291,7 +293,11 @@ function CallScreen({
   const gradient = contact ? contact.gradient : "linear-gradient(135deg, #8e9eab 0%, #4b5563 100%)"
 
   useEffect(() => {
-    const ring = setTimeout(() => setConnected(true), 1600)
+    startRingtone()
+    const ring = setTimeout(() => {
+      stopRingtone()
+      setConnected(true)
+    }, 1600)
     const tick = setInterval(() => {
       setConnected((c) => {
         if (c) setSeconds((s) => s + 1)
@@ -300,6 +306,7 @@ function CallScreen({
     }, 1000)
     const cycle = setInterval(() => setLineIndex((i) => i + 1), 2600)
     return () => {
+      stopRingtone()
       clearTimeout(ring)
       clearInterval(tick)
       clearInterval(cycle)
@@ -357,7 +364,7 @@ function CallScreen({
         </button>
 
         <button
-          onClick={onEnd}
+          onClick={() => { playHangup(); onEnd() }}
           className="flex flex-col items-center gap-1.5 active:opacity-70 transition-opacity"
         >
           <div className="w-[64px] h-[64px] rounded-full bg-[#FF3B30] flex items-center justify-center">

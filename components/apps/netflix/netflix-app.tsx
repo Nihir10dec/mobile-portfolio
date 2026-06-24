@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { useAppNavigation } from "@/hooks/use-app-navigation"
+import { playNetflixTaDum } from "@/lib/audio"
 import { portfolioData } from "@/data/portfolio"
 import type { CardItem, Profile, ProfileKey } from "./netflix-app.types"
 import { ABOUT_CARD, getRows, HERO_TAGLINES, PROFILES } from "./netflix-app.data"
@@ -684,6 +685,7 @@ function NetflixIntro({ onDone }: { onDone: () => void }) {
     // One rAF to let the browser paint phase-0 styles before we trigger the transition
     const raf = requestAnimationFrame(() => {
       setPhase(1)
+      playNetflixTaDum()
       const tExit = setTimeout(() => setPhase(2), 1080)
       const tDone = setTimeout(done, 1480)
       return () => { clearTimeout(tExit); clearTimeout(tDone) }

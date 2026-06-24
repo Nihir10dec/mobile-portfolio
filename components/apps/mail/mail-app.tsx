@@ -6,8 +6,10 @@ import { useAppNavigation } from "@/hooks/use-app-navigation"
 import { useDevice } from "@/hooks/use-device"
 import { portfolioData } from "@/data/portfolio"
 import { keyboardRows } from "./mail-app.data"
+import { playMailWhoosh } from "@/lib/audio"
 
 const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function MailApp() {
   const { closeApp } = useAppNavigation()
@@ -19,6 +21,7 @@ export default function MailApp() {
   const text = isDark ? "#ffffff" : "#000000"
   const textMuted = isDark ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.5)"
   const blue = "#007AFF"
+  const border = isDark ? "#2a2a2a" : "#e5e5ea"
 
   const [replyEmail, setReplyEmail] = useState("")
   const [subject, setSubject] = useState("Let's connect regarding...")
@@ -28,7 +31,8 @@ export default function MailApp() {
   const [botcheck, setBotcheck] = useState("")
   const [sending, setSending] = useState(false)
 
-  const canSend = body.trim().length > 0 && !sending
+  const emailOk = replyEmail.trim() !== "" && EMAIL_RE.test(replyEmail.trim())
+  const canSend = body.trim().length > 0 && emailOk && !sending
 
   const handleSend = async () => {
     if (botcheck) return // honeypot tripped
@@ -36,11 +40,16 @@ export default function MailApp() {
       toast.error("Please write a message before sending.")
       return
     }
+    if (!emailOk) {
+      toast.error("Please enter valid email before sending.")
+      return
+    }
     if (!WEB3FORMS_KEY) {
       toast.error("Email service is not configured.")
       return
     }
 
+    playMailWhoosh()
     setSending(true)
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -105,8 +114,8 @@ export default function MailApp() {
             value={replyEmail}
             onChange={(e) => setReplyEmail(e.target.value)}
             placeholder="your@email.com"
-            className="py-3 flex-1 bg-transparent border-none outline-hidden text-[15px]"
-            style={{ color: text }}
+            className="py-3 flex-1 bg-transparent border outline-hidden text-[15px]"
+            style={{ borderColor: replyEmail && !emailOk ? "#ff3b30" : border, color: text }}
           />
         </div>
 

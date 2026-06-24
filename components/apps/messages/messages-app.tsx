@@ -6,6 +6,7 @@ import { useDevice } from "@/hooks/use-device"
 import { portfolioData } from "@/data/portfolio"
 import { haptic } from "@/lib/haptics"
 import { trackEvent } from "@/lib/analytics"
+import { playBubblePop } from "@/lib/audio"
 import { messagesIntro, draftTemplates, type DraftTemplate } from "./messages-app.data"
 
 const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY
@@ -146,6 +147,7 @@ export default function MessagesApp() {
       })
       const data = await res.json()
       if (res.ok && data.success) {
+        playBubblePop()
         setBubbles((b) => [...b, { id: idRef.current++, from: "me", text: message }])
         setPhase("sent")
         setTemplate(null)
@@ -347,15 +349,18 @@ function FillInput({
   text: string
   muted: string
 }) {
-  const width = `${Math.max(value.length, placeholder.length) + 1}ch`
+  const MAX_CHARS = 60
+  const width = `${Math.min(Math.max(value.length, placeholder.length) + 1, MAX_CHARS)}ch`
   return (
     <input
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       aria-label={placeholder}
+      maxLength={MAX_CHARS}
       style={{
         width,
+        maxWidth: "100%",
         color: value ? text : muted,
         borderBottom: `1.5px ${value ? "solid" : "dashed"} ${value ? accent : muted}`,
       }}
